@@ -1,0 +1,200 @@
+/* 
+ * Browser Compatibility CSS
+ * Fixes for cross-browser compatibility issues
+ */
+
+/* Fix for Safari flexbox gap issues */
+.safari-flex-fix {
+  /* Add explicit margins to children instead of using gap */
+  gap: 0 !important;
+}
+
+.safari-flex-fix > * {
+  margin: 0.5rem !important;
+}
+
+/* Fix for Safari sticky positioning */
+.safari-sticky-fix {
+  position: fixed !important;
+}
+
+/* Internet Explorer fixes */
+.is-ie {
+  /* Force IE to use standard box model */
+  box-sizing: border-box;
+}
+
+.is-ie .projects-grid {
+  /* IE flexbox fallback for grid */
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.is-ie .projects-grid .project-card {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .is-ie .projects-grid .project-card {
+    width: calc(50% - 2rem);
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .is-ie .projects-grid .project-card {
+    width: calc(33.333% - 2rem);
+  }
+}
+
+/* Fix for Edge Legacy */
+.is-edge-legacy .hero-title-line .text-accent {
+  /* Fix blinking cursor animation in Edge */
+  animation: blink-edge 1s step-end infinite !important;
+}
+
+@keyframes blink-edge {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Reduce animations for performance issues or older browsers */
+.reduce-animation * {
+  transition-duration: 0.1s !important;
+  animation-duration: 0.1s !important;
+}
+
+.reduce-animation .fade-in,
+.reduce-animation .animate-in,
+.reduce-animation .animate-hero {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Fix for browsers that don't support backdrop-filter */
+@supports not ((backdrop-filter: blur(5px)) or (-webkit-backdrop-filter: blur(5px))) {
+  .site-header {
+    background-color: rgba(13, 13, 13, 0.98) !important;
+  }
+}
+
+/* Fix for browsers that don't support CSS variables */
+@supports not (--test: 0) {
+  body {
+    background-color: #0d0d0d !important;
+    color: #f5f5f5 !important;
+  }
+  
+  .text-accent, 
+  .project-category,
+  .about-intro,
+  .contact-intro,
+  .skill-category-title,
+  a.contact-value,
+  .nav-link.active,
+  .nav-link:hover {
+    color: #ffd700 !important;
+  }
+  
+  .site-header {
+    background-color: #0d0d0d !important;
+    border-bottom: 1px solid #333333 !important;
+  }
+  
+  .btn {
+    border: 2px solid #ffd700 !important;
+    color: #ffd700 !important;
+  }
+  
+  .btn:hover {
+    background-color: #ffd700 !important;
+    color: #0d0d0d !important;
+  }
+  
+  .section-title::after {
+    background-color: #ffd700 !important;
+  }
+}
+
+/* Fix for browsers that don't support IntersectionObserver */
+@media screen and (max-width: 767px) {
+  .project-card {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Fix for smooth scrolling in Safari */
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    html {
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Fix for Firefox specific issues */
+@-moz-document url-prefix() {
+  .pixel-element {
+    /* Fix for Firefox animation performance */
+    transform: translateZ(0);
+  }
+}
+
+/* Fix for mobile browsers */
+@media (hover: none) {
+  /* Remove hover effects on touch devices */
+  .project-card:hover,
+  .skill-category:hover,
+  .social-icon:hover {
+    transform: none !important;
+  }
+  
+  /* Make buttons more touch-friendly */
+  .btn,
+  .filter-btn,
+  .nav-link,
+  .footer-nav-link {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Fix for high contrast mode */
+@media (forced-colors: active) {
+  .text-accent {
+    color: HighlightText !important;
+  }
+  
+  .btn {
+    border: 2px solid ButtonText !important;
+    color: ButtonText !important;
+  }
+  
+  .btn:hover {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+  }
+}
+
+/* Fix for lazy loading in browsers that don't support it */
+.lazy:not(.loaded) {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy.loaded {
+  opacity: 1;
+}
+
+/* Fix for WebP fallback */
+picture.lazy source[type="image/webp"] {
+  /* Ensure proper fallback to next source or img */
+  display: inline;
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rachel Larralde's portfolio website showcasing web development and iOS app development projects"
+    />
+    <meta name="author" content="Rachel Larralde" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>"
+    />
+    <title>Rachel Larralde</title>
+    <!-- Google Fonts - Space Mono (Regular 400 and Bold 700) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations-fix.css" />
+    <link rel="stylesheet" href="css/browser-compatibility.css" />
+    <!-- Favicon will be added later -->
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="#" class="logo-link">
+              <span class="logo-text"
+                >RL<span class="text-accent">_DEV</span></span
+              >
+            </a>
+          </div>
+          <nav class="main-nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#work" class="nav-link">Work</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+              </li>
+            </ul>
+            <button
+              class="mobile-menu-toggle"
+              aria-label="Toggle navigation menu"
+            >
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="hero-title-line">Rachel</span>
+              <span class="hero-title-line"
+                >[Larralde]<span class="text-accent">_</span></span
+              >
+            </h1>
+            <p class="hero-tagline">
+              I'll help you build your web & iOS app prototype
+            </p>
+            <div class="hero-cta">
+              <a href="#work" class="btn btn-primary">View My Work</a>
+            </div>
+            <div class="hero-decoration">
+              <div class="pixel-element"></div>
+              <div class="pixel-element"></div>
+              <div class="pixel-element"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="work-section">
+        <div class="container">
+          <h2 class="section-title">
+            My Work<span class="text-accent">_</span>
+          </h2>
+          <div class="work-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Web Development">
+              Web
+            </button>
+            <button class="filter-btn" data-filter="iOS App">iOS</button>
+          </div>
+          <div id="projects-grid" class="projects-grid">
+            <!-- Project cards will be dynamically inserted here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container">
+          <h2 class="section-title">
+            About Me<span class="text-accent">_</span>
+          </h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p class="about-intro">
+                I'm a developer specializing in creating web and iOS
+                experiences.
+              </p>
+              <p>
+                With over 5 years of experience in both web and mobile
+                development, I focus on building clean, efficient applications.
+              </p>
+              <p>
+                When I'm not coding, you can find me making music, reading, and
+                spending time with my family.
+              </p>
+            </div>
+            <div class="about-image">
+              <div class="profile-image-container">
+                <!-- Profile image with WebP support and lazy loading -->
+                <picture class="lazy">
+                  <source
+                    data-srcset="assets/optimized/profile.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    data-src="assets/optimized/profile.jpg"
+                    alt="Rachel Larralde"
+                    class="lazy lazy-blur"
+                    loading="lazy"
+                    width="300"
+                    height="400"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-section">
+            <h3 class="skills-title">
+              Skills & Technologies<span class="text-accent">_</span>
+            </h3>
+            <div class="skills-container">
+              <div class="skill-category">
+                <h4 class="skill-category-title">Frontend</h4>
+                <ul class="skills-list">
+                  <li class="skill-tag">HTML5</li>
+                  <li class="skill-tag">CSS3</li>
+                  <li class="skill-tag">JavaScript</li>
+                  <li class="skill-tag">React</li>
+                  <li class="skill-tag">Vue.js</li>
+                  <li class="skill-tag">Responsive Design</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h4 class="skill-category-title">Mobile</h4>
+                <ul class="skills-list">
+                  <li class="skill-tag">Swift</li>
+                  <li class="skill-tag">SwiftUI</li>
+                  <li class="skill-tag">UIKit</li>
+                  <li class="skill-tag">React Native</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h4 class="skill-category-title">Backend</h4>
+                <ul class="skills-list">
+                  <li class="skill-tag">Node.js</li>
+                  <li class="skill-tag">Express</li>
+                  <li class="skill-tag">MongoDB</li>
+                  <li class="skill-tag">Firebase</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h4 class="skill-category-title">Tools</h4>
+                <ul class="skills-list">
+                  <li class="skill-tag">Git</li>
+                  <li class="skill-tag">Figma</li>
+                  <li class="skill-tag">VS Code</li>
+                  <li class="skill-tag">Xcode</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2 class="section-title">
+            Contact Me<span class="text-accent">_</span>
+          </h2>
+          <div class="contact-content">
+            <div class="contact-info">
+              <p class="contact-intro">
+                Interested in working together? Let's connect!
+              </p>
+              <p>
+                Feel free to reach out for collaborations and project inquiries.
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:hello@example.com" class="contact-value"
+                    >rachellarralde@gmail.com</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">Location</span>
+                  <span class="contact-value">Los Angeles, CA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fiverr-card-container">
+              <div class="fiverr-card">
+                <div class="fiverr-card-content">
+                  <h3 class="fiverr-card-title">Hire Me on Fiverr</h3>
+                  <p class="fiverr-card-description">
+                    Need a web or iOS app developer? Check out my services on
+                    Fiverr where I offer custom development packages tailored to
+                    your needs.
+                  </p>
+                  <ul class="fiverr-services-list">
+                    <li>Custom Web Development</li>
+                    <li>iOS App Development</li>
+                    <li>Responsive Website Creation</li>
+                  </ul>
+                  <a
+                    href="https://www.fiverr.com/yourusername"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary fiverr-btn"
+                  >
+                    View My Fiverr Gigs
+                    <span class="fiverr-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"
+                        />
+                        <path d="M9 4H7v5H4v2h5V4z" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <h3 class="social-title">
+              Connect With Me<span class="text-accent">_</span>
+            </h3>
+            <div class="social-icons">
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                aria-label="GitHub"
+              >
+                <span class="icon-github">{ }</span>
+                <span class="social-name">GitHub</span>
+              </a>
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                aria-label="LinkedIn"
+              >
+                <span class="icon-linkedin">in</span>
+                <span class="social-name">LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p class="copyright">&copy; 2025 Rachel Larralde. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <ul class="footer-nav">
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">Home</a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#work" class="footer-nav-link">Work</a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#about" class="footer-nav-link">About</a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#contact" class="footer-nav-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="small-text">
+            Designed with <span class="text-accent">&#9829;</span> in California
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

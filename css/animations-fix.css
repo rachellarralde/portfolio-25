@@ -1,0 +1,82 @@
+/* 
+ * Animation fixes for Retro Portfolio
+ * This file contains fixes for animation-related issues
+ */
+
+/* Fix for site header - ensure it's visible and properly positioned */
+.site-header {
+  transform: none !important;
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* Fix for hero section elements */
+.hero-title-line {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  width: auto !important;
+}
+
+.hero-tagline {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.hero-cta {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Fix for nav items */
+.nav-item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Only apply fade-in animations to non-critical elements */
+.fade-in:not(.site-header):not(.hero-title-line):not(.hero-tagline):not(.hero-cta):not(.nav-item) {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+/* Restore the blinking cursor animation */
+.hero-title-line:last-child .text-accent {
+  animation: blink 1s step-end infinite !important;
+}
+
+/* Restore pixel element animations */
+.pixel-element {
+  animation: float 4s ease-in-out infinite !important;
+}
+
+.pixel-element:nth-child(2) {
+  animation-delay: 0.5s !important;
+}
+
+.pixel-element:nth-child(3) {
+  animation-delay: 1s !important;
+}
+
+/* Modify the typing animation to be less disruptive */
+@keyframes typing-modified {
+  from { width: 100%; }
+  to { width: 100%; }
+}
+
+/* Ensure the hero section is visible */
+.hero-section {
+  opacity: 1 !important;
+}
+
+/* Fix for the section title reveal animation */
+.section-title::before {
+  display: none;
+}
