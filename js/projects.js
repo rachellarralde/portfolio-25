@@ -9,11 +9,12 @@ const projects = [
     id: "project1",
     title: "MISSING BRONTOSAURUS",
     category: "Web Development",
-    description: "A fully responsive music label landing page for Missing Brontosaurus.",
+    description:
+      "A fully responsive music label landing page for Missing Brontosaurus.",
     imageUrl: "assets/optimized/missing-brontosaurus.webp",
     imageUrlFallback: "assets/optimized/missing-brontosaurus.png",
     liveUrl: "https://missingbrontosaur.us",
-    featured: true
+    featured: true,
   },
   {
     id: "project2",
@@ -23,7 +24,7 @@ const projects = [
     imageUrl: "assets/optimized/flicked.webp",
     imageUrlFallback: "assets/optimized/flicked.png",
     liveUrl: "https://itsflicked.com",
-    featured: true
+    featured: true,
   },
   {
     id: "project3",
@@ -33,18 +34,18 @@ const projects = [
     imageUrl: "assets/optimized/mini-games.webp",
     imageUrlFallback: "assets/optimized/mini-games.png",
     liveUrl: "https://mini-fungames.vercel.app",
-    featured: true
+    featured: true,
   },
   {
     id: "project4",
-    title: "5 MINUTE TAROT",
-    category: "iOS App",
-    description: "AI Tarot fortune teller app",
+    title: "ARCADE",
+    category: "Audio Sampler Plug-In by Output",
+    description: "A sampler plug-in for audio production.",
     // Using witchaudio as a fallback since project4 images don't exist
-    imageUrl: "assets/optimized/witchaudio.webp",
-    imageUrlFallback: "assets/optimized/witchaudio.png",
-    liveUrl: "https://example.com/project4",
-    featured: false
+    imageUrl: "assets/arcade.png",
+    imageUrlFallback: "assets/arcade.png",
+    liveUrl: "https://output.com/arcade",
+    featured: false,
   },
   {
     id: "project5",
@@ -54,19 +55,19 @@ const projects = [
     imageUrl: "assets/optimized/witchaudio.webp",
     imageUrlFallback: "assets/optimized/witchaudio.png",
     liveUrl: "https://witchaudio.me/",
-    featured: false
+    featured: false,
   },
   {
     id: "project6",
-    title: "QUEER READS",
-    category: "iOS App",
-    description: "An app for finding the best LGBTQIA+ literature.",
+    title: "CO-PRODUCER",
+    category: "AI Powered Plug-In by Output",
+    description: "An AI-powered plug-in for audio production.",
     // Using flicked as a fallback since project6 images don't exist
-    imageUrl: "assets/optimized/flicked.webp",
-    imageUrlFallback: "assets/optimized/flicked.png",
-    liveUrl: "https://example.com/project6",
-    featured: false
-  }
+    imageUrl: "assets/copro.png",
+    imageUrlFallback: "assets/copro.png",
+    liveUrl: "https://output.com/products/co-producer",
+    featured: false,
+  },
 ];
 
 /**
@@ -76,12 +77,12 @@ const projects = [
 function renderProjects(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  
+
   // Clear the container
-  container.innerHTML = '';
-  
+  container.innerHTML = "";
+
   // Create and append project cards
-  projects.forEach(project => {
+  projects.forEach((project) => {
     const projectCard = createProjectCard(project);
     container.appendChild(projectCard);
   });
@@ -94,22 +95,26 @@ function renderProjects(containerId) {
  */
 function createProjectCard(project) {
   // Create card container
-  const card = document.createElement('article');
-  card.className = 'project-card';
+  const card = document.createElement("article");
+  card.className = "project-card";
   if (project.featured) {
-    card.classList.add('featured');
+    card.classList.add("featured");
   }
-  card.setAttribute('data-category', project.category);
-  
+  card.setAttribute("data-category", project.category);
+
   // Create image HTML with picture element for WebP support and advanced lazy loading
-  let imageHTML = '';
+  let imageHTML = "";
   if (project.imageUrlFallback) {
     // Use picture element with WebP and fallback with advanced lazy loading
     // Add sizes attribute for responsive images
     imageHTML = `
       <picture class="lazy">
-        <source data-srcset="${project.imageUrl}" type="image/webp" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-        <source data-srcset="${project.imageUrlFallback}" type="image/png" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+        <source data-srcset="${
+          project.imageUrl
+        }" type="image/webp" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+        <source data-srcset="${
+          project.imageUrlFallback
+        }" type="image/png" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
         <img 
           data-src="${project.imageUrlFallback}" 
           alt="${project.title}" 
@@ -117,7 +122,7 @@ function createProjectCard(project) {
           loading="lazy" 
           width="600" 
           height="338"
-          fetchpriority="${project.featured ? 'high' : 'auto'}"
+          fetchpriority="${project.featured ? "high" : "auto"}"
         >
       </picture>
     `;
@@ -131,11 +136,11 @@ function createProjectCard(project) {
         loading="lazy" 
         width="600" 
         height="338"
-        fetchpriority="${project.featured ? 'high' : 'auto'}"
+        fetchpriority="${project.featured ? "high" : "auto"}"
       >
     `;
   }
-  
+
   // Create card content
   card.innerHTML = `
     <div class="project-image placeholder">
@@ -150,7 +155,7 @@ function createProjectCard(project) {
       </a>
     </div>
   `;
-  
+
   return card;
 }
 
@@ -162,14 +167,14 @@ function createProjectCard(project) {
 function filterProjects(category, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  
-  const projectCards = container.querySelectorAll('.project-card');
-  
-  projectCards.forEach(card => {
-    if (category === 'all' || card.getAttribute('data-category') === category) {
-      card.style.display = 'block';
+
+  const projectCards = container.querySelectorAll(".project-card");
+
+  projectCards.forEach((card) => {
+    if (category === "all" || card.getAttribute("data-category") === category) {
+      card.style.display = "block";
     } else {
-      card.style.display = 'none';
+      card.style.display = "none";
     }
   });
 }
