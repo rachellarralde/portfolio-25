@@ -1,30 +1,37 @@
 /**
  * Contact Section Functionality
  * 
- * This file previously contained form validation and submission logic.
- * Since we've replaced the contact form with a Fiverr card, this file
- * now contains minimal functionality for the contact section.
+ * This file contains functionality for the contact section,
+ * including email link tracking and contact card interactions.
  */
 
 /**
  * Initialize the contact section functionality
- * This function is kept for compatibility with existing code
  */
 function initContactForm() {
-  // No form to initialize anymore
-  console.log('Contact section initialized with Fiverr card');
+  console.log('Contact section initialized');
   
-  // Add any additional functionality for the contact section here
-  const fiverrBtn = document.querySelector('.fiverr-btn');
+  // Add functionality for the contact button
+  const contactBtn = document.querySelector('.contact-btn');
   
-  if (fiverrBtn) {
-    // Track clicks on the Fiverr button if analytics are implemented
-    fiverrBtn.addEventListener('click', () => {
-      console.log('Fiverr button clicked');
+  if (contactBtn) {
+    // Track clicks on the contact button if analytics are implemented
+    contactBtn.addEventListener('click', () => {
+      console.log('Contact button clicked');
       // If you add analytics later, you can track this event
-      // Example: analytics.trackEvent('fiverr_click');
+      // Example: analytics.trackEvent('contact_email_click');
     });
   }
+  
+  // Add functionality for email links in contact details
+  const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  
+  emailLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      console.log('Email link clicked:', link.href);
+      // Track email link clicks if analytics are implemented
+    });
+  });
 }
 
 // Export the initialization function

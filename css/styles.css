@@ -385,17 +385,13 @@ main {
   color: var(--color-accent);
   opacity: 0.8;
 }
-/
-  *
+/*
   ----------
   Responsive
   Navigation
   ----------
   */
-  @media
-  screen
-  and
-  (max-width: 767px) {
+@media screen and (max-width: 767px) {
   /* Show the mobile menu toggle button */
   .mobile-menu-toggle {
     display: flex;
@@ -477,7 +473,9 @@ main {
     overflow: hidden;
   }
 }
-/ * ---------- Hero Section Styles ---------- */ .hero-section {
+
+/* ---------- Hero Section Styles ---------- */
+.hero-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1192,33 +1190,73 @@ main {
 
 .contact-content {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 2;
   margin-bottom: var(--space-lg);
 }
 
-/* Contact info styles */
-.contact-info {
-  flex: 1;
+/* Contact card container */
+.contact-card-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contact card styles */
+.contact-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-subtle-1);
+  padding: var(--space-lg);
+  position: relative;
+  text-align: center;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid var(--color-accent);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.contact-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: center;
 }
 
 .contact-intro {
   font-size: var(--fs-sm);
-  margin-bottom: var(--space-md);
   color: var(--color-accent);
   font-weight: 700;
+  margin: 0;
+}
+
+.contact-description {
+  font-size: var(--fs-xs);
+  color: var(--color-text-primary);
+  margin: 0;
 }
 
 .contact-details {
-  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
 }
 
 .contact-item {
-  margin-bottom: var(--space-sm);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .contact-label {
@@ -1256,13 +1294,10 @@ a.contact-value:hover::after {
   width: 100%;
 }
 
-/* Contact form styles */
-.contact-form-container {
-  flex: 1;
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-subtle-1);
-  padding: var(--space-md);
-  position: relative;
+/* Contact button styles */
+.contact-btn {
+  margin-top: var(--space-sm);
+  align-self: center;
 }
 
 /* Add a retro frame effect to the form container */
@@ -1888,8 +1923,9 @@ section::before {
     opacity: 1 !important;
     transform: none !important;
   }
-}/
-* ---------- Lazy Loading Styles ---------- */
+}
+
+/* ---------- Lazy Loading Styles ---------- */
 .lazy {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -1936,105 +1972,9 @@ section::before {
   to {
     left: 100%;
   }
-}/* ----
------- Fiverr Card Styles ---------- */
-.fiverr-card-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
-.fiverr-card {
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-subtle-1);
-  border-radius: var(--border-radius);
-  padding: var(--space-md);
-  width: 100%;
-  max-width: 500px;
-  position: relative;
-  transition: transform var(--transition-speed) ease,
-    box-shadow var(--transition-speed) ease;
-}
-
-.fiverr-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Add a retro frame effect to the Fiverr card */
-.fiverr-card::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border: 1px solid var(--color-accent);
-  z-index: -1;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.fiverr-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.fiverr-card-title {
-  font-size: var(--fs-sm);
-  color: var(--color-accent);
-  margin-bottom: var(--space-xs);
-}
-
-.fiverr-card-description {
-  font-size: var(--fs-xs);
-  margin-bottom: var(--space-sm);
-  color: var(--color-text-primary);
-}
-
-.fiverr-services-list {
-  margin: var(--space-sm) 0;
-  padding-left: var(--space-md);
-  list-style-type: none;
-}
-
-.fiverr-services-list li {
-  position: relative;
-  padding-left: var(--space-sm);
-  margin-bottom: var(--space-xs);
-  font-size: var(--fs-xs);
-}
-
-.fiverr-services-list li::before {
-  content: ">";
-  position: absolute;
-  left: -10px;
-  color: var(--color-accent);
-  font-weight: bold;
-}
-
-.fiverr-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  margin-top: var(--space-sm);
-  align-self: flex-start;
-}
-
-.fiverr-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-speed) ease;
-}
-
-.fiverr-btn:hover .fiverr-icon {
-  transform: translateX(3px);
-}
-
-/* Animation for Fiverr card */
+/* Animation for contact card */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -2046,15 +1986,19 @@ section::before {
   }
 }
 
-.contact-section.animate .fiverr-card {
+.contact-section.animate .contact-card {
   animation: fadeInUp 0.8s 0.5s forwards;
   opacity: 0;
   transform: translateY(20px);
 }
 
-/* Responsive styles */
+/* Additional responsive styles for contact section */
 @media screen and (max-width: 767px) {
-  .fiverr-card {
-    max-width: 100%;
+  .contact-card {
+    padding: var(--space-md);
+  }
+  
+  .contact-details {
+    gap: var(--space-xs);
   }
 }
