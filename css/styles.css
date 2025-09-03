@@ -979,11 +979,12 @@ main {
   width: 100%;
   max-width: 300px;
   position: relative;
+  margin: 0 auto;
 }
 
 .profile-image-placeholder {
   width: 100%;
-  padding-bottom: 100%; /* 1:1 Aspect ratio */
+  padding-bottom: 133.33%; /* 3:4 Aspect ratio (300:400) */
   background-color: var(--color-bg-secondary);
   border: 2px solid var(--color-subtle-1);
   display: flex;
@@ -1146,6 +1147,25 @@ main {
 }
 
 /* Responsive styles for about section */
+@media screen and (max-width: 767px) {
+  .profile-image-container {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+  }
+  
+  .about-image picture {
+    display: block;
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .about-content {
     flex-direction: row;
