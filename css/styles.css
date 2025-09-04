@@ -728,6 +728,27 @@ main {
   gap: var(--space-md);
 }
 
+/* Video project styles */
+.project-video-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.project-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Responsive grid adjustments */
 @media screen and (min-width: 768px) {
   .projects-grid {
@@ -980,26 +1001,21 @@ main {
   max-width: 300px;
   position: relative;
   margin: 0 auto;
-}
-
-.profile-image-placeholder {
-  width: 100%;
-  padding-bottom: 133.33%; /* 3:4 Aspect ratio (300:400) */
-  background-color: var(--color-bg-secondary);
   border: 2px solid var(--color-subtle-1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  background-color: var(--color-bg-secondary);
 }
 
-.placeholder-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--color-subtle-2);
-  font-size: var(--fs-xs);
+/* Direct image styling */
+
+.profile-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Profile image styles */
+.profile-image-text {
   text-align: center;
 }
 
@@ -1156,7 +1172,7 @@ main {
   .about-image img {
     width: 100%;
     height: auto;
-    aspect-ratio: 3/4;
+    aspect-ratio: 1/1;
     object-fit: cover;
   }
   

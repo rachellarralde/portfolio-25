@@ -6,15 +6,15 @@
 // Sample projects data array
 const projects = [
   {
-    id: "project1",
-    title: "MISSING BRONTOSAURUS",
-    category: "Web Development",
-    description:
-      "A fully responsive music label landing page for Missing Brontosaurus.",
-    imageUrl: "assets/optimized/missing-brontosaurus.webp",
-    imageUrlFallback: "assets/optimized/missing-brontosaurus.png",
-    liveUrl: "https://missingbrontosaur.us",
-    featured: true,
+    id: "project4",
+    title: "ARCADE",
+    category: "Audio Sampler Plug-In by Output",
+    description: "A sampler plug-in for audio production.",
+    // Using witchaudio as a fallback since project4 images don't exist
+    imageUrl: "assets/arcade.png",
+    imageUrlFallback: "assets/arcade.png",
+    liveUrl: "https://output.com/arcade",
+    featured: false,
   },
   {
     id: "project2",
@@ -26,26 +26,24 @@ const projects = [
     liveUrl: "https://itsflicked.com",
     featured: true,
   },
+  // {
+  //   id: "project7",
+  //   title: "MINI GAMES",
+  //   category: "Web Development",
+  //   description: "A minimal games site.",
+  //   imageUrl: "assets/optimized/mini-games.webp",
+  //   imageUrlFallback: "assets/optimized/mini-games.png",
+  //   liveUrl: "https://mini-fungames.vercel.app",
+  //   featured: false,
+  // },
   {
     id: "project3",
-    title: "MINI GAMES",
-    category: "Web Development",
-    description: "A minimal games site.",
-    imageUrl: "assets/optimized/mini-games.webp",
-    imageUrlFallback: "assets/optimized/mini-games.png",
-    liveUrl: "https://mini-fungames.vercel.app",
+    title: "EDITOR REEL",
+    category: "Video",
+    description: "A showcase of my video editing work.",
+    videoUrl: "https://www.youtube.com/embed/x0JbfUpb4QA?si=WNa4gGd5XPJZCaNq",
+    liveUrl: "https://youtu.be/x0JbfUpb4QA",
     featured: true,
-  },
-  {
-    id: "project4",
-    title: "ARCADE",
-    category: "Audio Sampler Plug-In by Output",
-    description: "A sampler plug-in for audio production.",
-    // Using witchaudio as a fallback since project4 images don't exist
-    imageUrl: "assets/arcade.png",
-    imageUrlFallback: "assets/arcade.png",
-    liveUrl: "https://output.com/arcade",
-    featured: false,
   },
   {
     id: "project5",
@@ -67,6 +65,17 @@ const projects = [
     imageUrlFallback: "assets/copro.png",
     liveUrl: "https://output.com/products/co-producer",
     featured: false,
+  },
+  {
+    id: "project1",
+    title: "MISSING BRONTOSAURUS",
+    category: "Web Development",
+    description:
+      "A fully responsive music label landing page for Missing Brontosaurus.",
+    imageUrl: "assets/optimized/missing-brontosaurus.webp",
+    imageUrlFallback: "assets/optimized/missing-brontosaurus.png",
+    liveUrl: "https://missingbrontosaur.us",
+    featured: true,
   },
 ];
 
@@ -104,7 +113,24 @@ function createProjectCard(project) {
 
   // Create image HTML with picture element for WebP support and advanced lazy loading
   let imageHTML = "";
-  if (project.imageUrlFallback) {
+  if (project.videoUrl) {
+    // Create YouTube embed using the provided embed URL
+    imageHTML = `
+      <div class="project-video">
+        <iframe 
+          width="600" 
+          height="338" 
+          src="${project.videoUrl}" 
+          title="${project.title}" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    `;
+  } else if (project.imageUrlFallback) {
     // Use picture element with WebP and fallback with advanced lazy loading
     // Add sizes attribute for responsive images
     imageHTML = `
@@ -143,15 +169,21 @@ function createProjectCard(project) {
 
   // Create card content
   card.innerHTML = `
-    <div class="project-image placeholder">
+    <div class="${
+      project.videoUrl ? "project-video-container" : "project-image placeholder"
+    }">
       ${imageHTML}
     </div>
     <div class="project-content">
       <span class="project-category">${project.category}</span>
       <h3 class="project-title">${project.title}</h3>
       <p class="project-description">${project.description}</p>
-      <a href="${project.liveUrl}" class="project-link" target="_blank" rel="noopener noreferrer">
-        Live Website <span class="arrow-icon">→</span>
+      <a href="${
+        project.liveUrl
+      }" class="project-link" target="_blank" rel="noopener noreferrer">
+        ${
+          project.videoUrl ? "Watch Video" : "Live Website"
+        } <span class="arrow-icon">→</span>
       </a>
     </div>
   `;
