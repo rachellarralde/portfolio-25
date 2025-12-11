@@ -1,0 +1,191 @@
+{
+  "name": "Hire Me Form to Email",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "hire-me",
+        "httpMethod": "POST",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [320, 300],
+      "webhookId": "hire-me-webhook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "name",
+              "name": "name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "email",
+              "name": "email",
+              "value": "={{ $json.body.email }}",
+              "type": "string"
+            },
+            {
+              "id": "businessType",
+              "name": "businessType",
+              "value": "={{ $json.body.businessType || 'Not specified' }}",
+              "type": "string"
+            },
+            {
+              "id": "budget",
+              "name": "budget",
+              "value": "={{ $json.body.budget || 'Not specified' }}",
+              "type": "string"
+            },
+            {
+              "id": "timeline",
+              "name": "timeline",
+              "value": "={{ $json.body.timeline || 'Not specified' }}",
+              "type": "string"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "value": "={{ $json.body.message || 'No description provided' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-fields",
+      "name": "Extract Form Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [540, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "=New Hire Me Inquiry from {{ $json.name }}",
+        "emailType": "text",
+        "message": "=New project inquiry from your portfolio!\n\n----------------------------------------\n\nName: {{ $json.name }}\nEmail: {{ $json.email }}\nBusiness Type: {{ $json.businessType }}\nBudget: {{ $json.budget }}\nTimeline: {{ $json.timeline }}\n\n----------------------------------------\n\nProject Description:\n{{ $json.message }}\n\n----------------------------------------\nSent from rachell.dev/hire-me",
+        "options": {}
+      },
+      "id": "send-gmail",
+      "name": "Send Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [760, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_WITH_YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"message\": \"Thanks! I'll get back to you soon.\" } }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-success",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [980, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": false, \"message\": \"Something went wrong. Please try again or email me directly.\" } }}",
+        "options": {
+          "responseCode": 500,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-error",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [980, 480]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Form Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Form Data": {
+      "main": [
+        [
+          {
+            "node": "Send Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Gmail": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": ""
+  },
+  "id": "hire-me-workflow",
+  "active": false
+}

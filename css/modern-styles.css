@@ -111,6 +111,26 @@ a {
     text-shadow: none;
 }
 
+.nav-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(0, 255, 157, 0.05); /* Slightly less opaque than btn */
+    font-size: 0.9rem;
+}
+
+.nav-btn:hover {
+    background: var(--accent-primary);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+}
+
 /* Utility Classes */
 .text-accent { color: var(--accent-primary); text-shadow: 0 0 10px var(--accent-primary); }
 .text-secondary { color: var(--accent-secondary); text-shadow: 0 0 10px var(--accent-secondary); }
@@ -560,4 +580,165 @@ section {
     .skill-tags-wrapper {
         padding-left: 1rem;
     }
+}
+
+/* Hire Me Page Styles */
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border-radius: 4px; /* subtle rounding */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 5px 15px rgba(0, 255, 157, 0.1);
+}
+
+.service-title {
+    color: var(--accent-primary);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.service-description {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* Process Section */
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+    counter-reset: process-counter;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-left: 2px solid var(--accent-secondary);
+    position: relative;
+}
+
+.process-step::before {
+    counter-increment: process-counter;
+    content: "0" counter(process-counter);
+    position: absolute;
+    top: -1.5rem;
+    left: 1rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 0, 85, 0.2);
+    z-index: -1;
+}
+
+.process-title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* FAQ Section */
+.faq-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 1.5rem;
+}
+
+.faq-question {
+    color: var(--accent-primary);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.faq-answer {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* Form Styles */
+.hire-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 3rem;
+    position: relative;
+}
+
+.hire-form-container::before {
+    content: "INITIALIZE_PROJECT_PROTOCOL //";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--bg-color); /* Matches page bg to look like cutout */
+    padding: 0 10px;
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-primary);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
 }

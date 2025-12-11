@@ -7,7 +7,7 @@ const projects = [
         title: "ARCADE",
         category: "Audio Sampler Plug-In by Output",
         description: "A sampler plug-in for audio production.",
-        imageUrl: "assets/arcade.png",
+        imageUrl: "/assets/arcade.png",
         liveUrl: "https://output.com/arcade",
         featured: false,
     },
@@ -16,7 +16,7 @@ const projects = [
         title: "GET FLICKED",
         category: "iOS App",
         description: "A movies and TV show recommendation engine.",
-        imageUrl: "assets/optimized/flicked.webp",
+        imageUrl: "/assets/optimized/flicked.webp",
         liveUrl: "https://getflicked.app",
         featured: true,
     },
@@ -25,7 +25,7 @@ const projects = [
         title: "RESUME MATCH",
         category: "AI Powered Web App",
         description: "AI-powered resume analysis and optimization tool.",
-        imageUrl: "assets/resume-match-dashboard.png",
+        imageUrl: "/assets/resume-match-dashboard.png",
         liveUrl: "https://www.resumematch.online",
         featured: true,
     },
@@ -34,7 +34,7 @@ const projects = [
         title: "WITCH@UDIO PORTFOLIO",
         category: "Web Development",
         description: "Stylish and interactive portfolio website.",
-        imageUrl: "assets/optimized/witchaudio.webp",
+        imageUrl: "/assets/optimized/witchaudio.webp",
         liveUrl: "https://witchaudio.me/",
         featured: false,
     },
@@ -43,7 +43,7 @@ const projects = [
         title: "CO-PRODUCER",
         category: "AI Powered Plug-In by Output",
         description: "An AI-powered plug-in for audio production.",
-        imageUrl: "assets/copro.png",
+        imageUrl: "/assets/copro.png",
         liveUrl: "https://output.com/products/co-producer",
         featured: false,
     },
@@ -52,9 +52,8 @@ const projects = [
         title: "MISSING BRONTOSAURUS",
         category: "Web Development",
         description: "A fully responsive music label landing page for Missing Brontosaurus.",
-        imageUrl: "assets/optimized/missing-brontosaurus.webp",
+        imageUrl: "/assets/optimized/missing-brontosaurus.webp",
         liveUrl: "https://missingbrontosaur.us",
-        featured: true,
     },
 ];
 
@@ -138,7 +137,8 @@ function initTypewriter() {
         "Fullstack Developer",
         "Context AI Engineer"
     ];
-    const taglineElement = document.querySelector('.hero-tagline');
+    const taglineElement = document.querySelector('.hero-tagline[data-typewriter="true"]');
+    if (!taglineElement) return;
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
