@@ -5,264 +5,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Rachel Larralde's portfolio website showcasing web development and iOS app development projects" />
+    content="Rachel Larralde — freelance software development engineer in test, fullstack developer, and context ai engineer. portfolio and hire page." />
   <meta name="author" content="Rachel Larralde" />
+  <meta name="theme-color" content="#121212" />
   <link rel="icon" href="favicon.png" />
-  <title>Rachell.dev</title>
-  <!-- Google Fonts - Space Mono -->
+  <title>rachell.dev // terminal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet" />
-  <!-- New Modern Styles -->
-  <link rel="stylesheet" href="css/modern-styles.css" />
+  <link rel="stylesheet" href="css/rachell-tokens.css" />
+  <link rel="stylesheet" href="css/rachell.css" />
 </head>
 
-<body>
-  <header class="site-header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="#" class="logo-link">
-            <span class="logo-text">RACHELL<span class="text-accent">.DEV</span></span>
-          </a>
-        </div>
-        <nav class="main-nav">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#work" class="nav-link">WORK</a></li>
-            <li class="nav-item"><a href="#about" class="nav-link">ABOUT</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link">CONTACT</a></li>
-            <li class="nav-item"><a href="/hire-me/" class="nav-btn">HIRE ME</a></li>
-          </ul>
-        </nav>
-      </div>
+<body class="is-booting">
+  <!-- boot splash (BootSequence) -->
+  <div id="boot" class="boot" aria-hidden="true"></div>
+
+  <!-- top rail (waybar) -->
+  <header class="bar bar--top" id="topbar">
+    <div class="bar__cell bar__left">
+      <button class="bar__launch" id="launcher-btn" aria-label="open launcher" title="launcher ⌘k">◆</button>
+      <nav class="ws" aria-label="workspaces">
+        <a href="#hero" class="ws__tab is-active"><span class="ws__n">1</span><span class="lbl">home</span></a>
+        <a href="#work" class="ws__tab"><span class="ws__n">2</span><span class="lbl">work</span></a>
+        <a href="#about" class="ws__tab"><span class="ws__n">3</span><span class="lbl">about</span></a>
+        <a href="#contact" class="ws__tab"><span class="ws__n">4</span><span class="lbl">contact</span></a>
+        <a href="/hire-me/" class="ws__tab ws__tab--hire"><span class="ws__n">▸</span><span class="lbl">hire me</span></a>
+      </nav>
+    </div>
+    <div class="bar__cell bar__center"><span id="clock">--:--:--</span>&nbsp;·&nbsp;<span id="date"></span></div>
+    <div class="bar__cell bar__right">
+      <span id="bar-cpu" class="meter meter--sm" aria-hidden="true"></span>
+      <span id="bar-mem" class="meter meter--sm" aria-hidden="true"></span>
+      <span class="badge badge--ok badge--dot">online</span>
+      <button class="bar__icon" id="power-btn" aria-label="lock session" title="lock (l)">⏻</button>
     </div>
   </header>
 
-  <main>
-    <section id="hero" class="hero-section">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="hero-title-line">RACHEL</span>
-            <span class="hero-title-line">[LARRALDE]<span class="text-accent">_</span></span>
-          </h1>
-          <p class="hero-tagline" data-typewriter="true">
-            Engineering scalable applications, robust automation frameworks, and AI-driven solutions.
-          </p>
-          <div class="hero-cta">
-            <a href="#work" class="btn">VIEW MY WORK</a>
+  <main class="desktop">
+    <!-- ws 1 · home -->
+    <section id="hero" class="screen hero" aria-label="home">
+      <div class="panel panel--flush hero__banner">
+        <div class="hero__rain" id="hero-rain" aria-hidden="true"></div>
+        <span class="panel__scan" aria-hidden="true"></span>
+        <div class="hero__inner">
+          <span class="hero__sub">section 9 // portfolio</span>
+          <pre class="banner" id="banner" aria-label="RACHELL">RACHELL</pre>
+          <h1 class="hero__role"><span class="p-sym">❯</span><span id="role" aria-live="polite">software development engineer in test</span><span class="cursor" aria-hidden="true"></span></h1>
+          <div class="hero__cta">
+            <a href="#work" class="btn btn--lg">view work</a>
+            <a href="/hire-me/" class="btn btn--lg btn--secondary">hire me</a>
+            <button class="kc kc--btn" type="button" data-action="terminal"><kbd>t</kbd><span>terminal</span></button>
+            <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
           </div>
-
-          <!-- Decorative Elements -->
-          <div class="hero-decoration">
-            <!-- Can add SVG or CSS shapes here later -->
+          <div class="hero__facts">
+            <span class="badge badge--ok badge--dot">accepting freelance projects</span>
+            <span class="badge">web · ios · automation · ai</span>
           </div>
         </div>
+      </div>
+
+      <!-- alacritty -->
+      <section class="panel panel--accent hero__term" aria-label="terminal">
+        <header class="panel__head"><span class="panel__title">alacritty</span><span class="panel__meta">zsh · interactive</span></header>
+        <div class="panel__body panel__body--flush">
+          <div class="term" id="term">
+            <div id="term-out"></div>
+            <form class="term__form" id="term-form" autocomplete="off">
+              <span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span>
+              <input class="term__input" id="term-input" type="text" aria-label="terminal command" placeholder="type help" spellcheck="false" autocapitalize="off" autocorrect="off" />
+            </form>
+          </div>
+        </div>
+        <footer class="panel__foot">
+          <span class="kc"><kbd>⏎</kbd><span>run</span></span>
+          <span class="kc"><kbd>↑↓</kbd><span>history</span></span>
+          <span class="kc"><kbd>⇥</kbd><span>complete</span></span>
+          <span class="kc"><kbd>^l</kbd><span>clear</span></span>
+        </footer>
+      </section>
+
+      <!-- btop -->
+      <section class="panel hero__mon" aria-label="system monitor">
+        <header class="panel__head"><span class="panel__title">btop</span><span class="panel__meta">uptime <span id="uptime">00:00:00</span></span></header>
+        <div class="panel__body mon">
+          <div class="mon__meters" id="mon-meters"></div>
+          <div class="divider">processes</div>
+          <div class="log" id="mon-procs"></div>
+          <div class="divider">status</div>
+          <div class="mon__row">
+            <span class="badge badge--ok badge--dot">available</span>
+            <span class="badge badge--info">remote · async</span>
+            <a class="kc" href="#contact"><kbd>4</kbd><span>contact</span></a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ws 2 · work -->
+    <section id="work" class="screen" aria-label="work">
+      <h2 class="screen__head"><span class="n">02 //</span> work <span class="m">~/work · ls -la</span></h2>
+      <div class="filters" id="filters" role="tablist" aria-label="filter projects"></div>
+      <div id="projects-grid" class="proj-grid"><p class="faint">probing projects…</p></div>
+    </section>
+
+    <!-- ws 3 · about -->
+    <section id="about" class="screen" aria-label="about">
+      <h2 class="screen__head"><span class="n">03 //</span> about <span class="m">cat ~/about.txt</span></h2>
+      <div class="tiles tiles--2">
+        <section class="panel">
+          <header class="panel__head"><span class="panel__title">nvim  about.txt</span><span class="panel__meta">markdown · utf-8</span></header>
+          <div class="panel__body prose" id="about-text"></div>
+          <footer class="panel__foot"><span class="kc"><kbd>:q</kbd><span>close</span></span><span class="kc"><kbd>4</kbd><span>contact</span></span><span style="margin-left:auto">NORMAL</span></footer>
+        </section>
+        <section class="panel">
+          <header class="panel__head"><span class="panel__title">skills — btop</span><span class="panel__meta" id="skills-meta"></span></header>
+          <div class="panel__body panel__body--flush skills" id="skills"></div>
+          <footer class="panel__foot"><span class="kc"><kbd>▸</kbd><span>expand</span></span><span class="kc"><kbd>▾</kbd><span>collapse</span></span></footer>
+        </section>
       </div>
     </section>
 
-    <section id="work" class="work-section">
-      <div class="container">
-        <h2 class="section-title">MY WORK<span class="text-accent">_</span></h2>
-
-        <div class="work-filters">
-          <!-- Filters to be implemented -->
-        </div>
-
-        <div id="projects-grid" class="projects-grid">
-          <!-- Placeholder for projects -->
-          <p>Projects loading...</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about-section">
-      <div class="container">
-        <h2 class="section-title">ABOUT ME<span class="text-accent">_</span></h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>I am many things: <span class="text-secondary">Software Development Engineer in Test</span>, <span
-                class="text-secondary">Fullstack Developer</span>, and <span class="text-secondary">Context AI
-                Engineer</span>.</p>
-            <p>I engineer resilient full-stack systems and intelligent automation frameworks. My focus lies in merging
-              rigorous software quality standards with cutting-edge AI technologies to build scalable, future-proof
-              applications.</p>
+    <!-- ws 4 · contact -->
+    <section id="contact" class="screen" aria-label="contact">
+      <h2 class="screen__head"><span class="n">04 //</span> contact <span class="m">uplink</span></h2>
+      <section class="panel panel--strong">
+        <header class="panel__head"><span class="panel__title">uplink</span><span class="panel__meta">smtp · ready</span></header>
+        <div class="panel__body uplink">
+          <div class="term__line"><span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span><span class="p-cmd">mail -s "hello" rachellarralde@gmail.com</span></div>
+          <p class="uplink__mail">rachellarralde@gmail.com</p>
+          <div class="uplink__actions">
+            <a href="mailto:rachellarralde@gmail.com" class="btn btn--lg">initiate communication</a>
+            <button class="btn btn--lg btn--secondary" type="button" data-copy="rachellarralde@gmail.com">copy address</button>
+            <a href="/hire-me/" class="btn btn--lg btn--ghost">start a project ▸</a>
+          </div>
+          <div class="hero__facts">
+            <span class="badge badge--ok badge--dot">accepting projects</span>
+            <span class="badge">web · automation · qa · ai</span>
           </div>
         </div>
-
-        <div class="skills-section">
-          <h3 class="skills-title">// SKILLS_AND_TECHNOLOGIES</h3>
-          <div class="skills-terminal-card">
-
-            <!-- Languages -->
-            <div class="skill-row">
-              <div class="skill-header">
-                <span class="skill-index">01</span>
-                <h4 class="skill-category-name">LANGUAGES</h4>
-                <div class="skill-decoration-line"></div>
-                <span class="skill-toggle">+</span>
-              </div>
-              <div class="skill-content">
-                <div class="skill-tags-wrapper">
-                  <span class="skill-pill">JavaScript (ES6+)</span>
-                  <span class="skill-pill">TypeScript</span>
-                  <span class="skill-pill">Python</span>
-                  <span class="skill-pill">SQL (PostgreSQL)</span>
-                  <span class="skill-pill">HTML5</span>
-                  <span class="skill-pill">CSS3/SASS</span>
-                  <span class="skill-pill">Markdown</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Frameworks & Libraries -->
-            <div class="skill-row">
-              <div class="skill-header">
-                <span class="skill-index">02</span>
-                <h4 class="skill-category-name">FRAMEWORKS & LIBRARIES</h4>
-                <div class="skill-decoration-line"></div>
-                <span class="skill-toggle">+</span>
-              </div>
-              <div class="skill-content">
-                <div class="skill-tags-wrapper">
-                  <span class="skill-pill">React</span>
-                  <span class="skill-pill">Next.js</span>
-                  <span class="skill-pill">Node.js</span>
-                  <span class="skill-pill">Express</span>
-                  <span class="skill-pill">Flask</span>
-                  <span class="skill-pill">FastAPI</span>
-                  <span class="skill-pill">Material-UI</span>
-                  <span class="skill-pill">TailwindCSS</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Automation & Testing -->
-            <div class="skill-row">
-              <div class="skill-header">
-                <span class="skill-index">03</span>
-                <h4 class="skill-category-name">AUTOMATION & TESTING</h4>
-                <div class="skill-decoration-line"></div>
-                <span class="skill-toggle">+</span>
-              </div>
-              <div class="skill-content">
-                <div class="skill-tags-wrapper">
-                  <span class="skill-pill">Playwright</span>
-                  <span class="skill-pill">Cypress</span>
-                  <span class="skill-pill">Postman</span>
-                  <span class="skill-pill">Pytest</span>
-                  <span class="skill-pill">GitHub Actions</span>
-                  <span class="skill-pill">Jenkins</span>
-                  <span class="skill-pill">CircleCI</span>
-                  <span class="skill-pill">BrowserStack</span>
-                  <span class="skill-pill">Selenium</span>
-                  <span class="skill-pill">TestNG</span>
-                  <span class="skill-pill">Appium</span>
-                  <span class="skill-pill">Sauce Labs</span>
-                  <span class="skill-pill">Rest Assured</span>
-                  <span class="skill-pill">Cucumber</span>
-                  <span class="skill-pill">Jasmine</span>
-                  <span class="skill-pill">Protractor</span>
-                  <span class="skill-pill">TDD / BDD</span>
-                  <span class="skill-pill">Agile Management</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- DevOps & Cloud -->
-            <div class="skill-row">
-              <div class="skill-header">
-                <span class="skill-index">04</span>
-                <h4 class="skill-category-name">DEVOPS & CLOUD</h4>
-                <div class="skill-decoration-line"></div>
-                <span class="skill-toggle">+</span>
-              </div>
-              <div class="skill-content">
-                <div class="skill-tags-wrapper">
-                  <span class="skill-pill">Docker</span>
-                  <span class="skill-pill">AWS</span>
-                  <span class="skill-pill">GCP</span>
-                  <span class="skill-pill">Firebase</span>
-                  <span class="skill-pill">Netlify</span>
-                  <span class="skill-pill">Vercel</span>
-                  <span class="skill-pill">CI/CD Pipelines</span>
-                  <span class="skill-pill">MockServer</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Developer Tools -->
-            <div class="skill-row">
-              <div class="skill-header">
-                <span class="skill-index">05</span>
-                <h4 class="skill-category-name">DEVELOPER TOOLS</h4>
-                <div class="skill-decoration-line"></div>
-                <span class="skill-toggle">+</span>
-              </div>
-              <div class="skill-content">
-                <div class="skill-tags-wrapper">
-                  <span class="skill-pill">Git / GitHub</span>
-                  <span class="skill-pill">VS Code</span>
-                  <span class="skill-pill">Webpack / Babel</span>
-                  <span class="skill-pill">npm / yarn</span>
-                  <span class="skill-pill">Chrome DevTools</span>
-                  <span class="skill-pill">Notion</span>
-                  <span class="skill-pill">Claude Code</span>
-                  <span class="skill-pill">Gemini CLI</span>
-                  <span class="skill-pill">GPT-Codex</span>
-                  <span class="skill-pill">Cursor</span>
-                  <span class="skill-pill">N8N</span>
-                  <span class="skill-pill">AI/ML Automation</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Design Tools -->
-            <div class="skill-row">
-              <div class="skill-header">
-                <span class="skill-index">06</span>
-                <h4 class="skill-category-name">DESIGN TOOLS</h4>
-                <div class="skill-decoration-line"></div>
-                <span class="skill-toggle">+</span>
-              </div>
-              <div class="skill-content">
-                <div class="skill-tags-wrapper">
-                  <span class="skill-pill">Figma</span>
-                  <span class="skill-pill">Adobe Suite</span>
-                  <span class="skill-pill">Sketch</span>
-                  <span class="skill-pill">Framer</span>
-                  <span class="skill-pill">Adobe Experience Manager</span>
-                  <span class="skill-pill">CMS</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="contact-card-wrapper">
-          <div class="contact-card">
-            <h2 class="section-title">CONTACT<span class="text-accent">_</span></h2>
-            <p class="contact-email">rachellarralde@gmail.com</p>
-            <a href="mailto:rachellarralde@gmail.com" class="btn contact-btn">INITIATE_COMMUNICATION</a>
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Rachel Larralde. <span class="text-accent">System Online.</span></p>
-    </div>
+  <!-- bottom rail -->
+  <footer class="bar bar--bottom">
+    <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
+    <button class="kc kc--btn" type="button" data-action="terminal"><kbd>t</kbd><span>terminal</span></button>
+    <button class="kc kc--btn" type="button" data-action="help"><kbd>?</kbd><span>help</span></button>
+    <button class="kc kc--btn" type="button" data-action="lock"><kbd>l</kbd><span>lock</span></button>
+    <span style="margin-left:auto;display:flex;gap:12px;align-items:center">
+      <span class="badge badge--info" id="ws-badge">ws 1</span>
+      <span class="bar__copy"><span class="full">© 2025 rachel larralde · </span><span class="hl">system online</span></span>
+    </span>
   </footer>
 
-  <script src="js/modern-main.js" type="module"></script>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="js/rachell-os.js" type="module"></script>
 </body>
 
 </html>

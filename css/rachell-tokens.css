@@ -1,0 +1,220 @@
+/* Rachell terminal design system — tokens (verbatim from Batou Terminal Design System export) */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+
+/* ---- tokens/fonts.css ---- */
+/* Batou ships no font binaries. The theme's terminals (alacritty/ghostty/kitty) inherit
+   the Omarchy default CaskaydiaMono Nerd Font. SUBSTITUTION: JetBrains Mono (Google Fonts),
+   loaded from styles.css. Local @font-face aliases keep one name across the system. */
+@font-face{font-family:"Rachell Mono";font-style:normal;font-weight:300 700;font-display:swap;src:local("JetBrains Mono"),local("CaskaydiaMono Nerd Font"),local("CaskaydiaCove Nerd Font"),local("JetBrainsMono Nerd Font")}
+:root{
+--font-mono:"JetBrains Mono","Rachell Mono","CaskaydiaMono Nerd Font",ui-monospace,SFMono-Regular,Menlo,monospace;
+--font-core:var(--font-mono);
+--font-display:var(--font-mono);
+--font-body:var(--font-mono);
+}
+
+/* ---- tokens/colors.css ---- */
+/* Source of truth: colors.toml — github.com/HANCORE-linux/omarchy-batou-theme
+   16-colour ANSI palette, verbatim. Nothing here is invented except the four
+   surface tints (--rch-surface-*), derived by lifting --rch-bg toward --rch-black-br. */
+:root{
+/* base / terminal */
+--rch-bg:#121212;
+--rch-fg:#a4a4a4;
+--rch-cursor:#a4a4a4;
+--rch-accent-raw:#605d5b;
+--rch-sel-fg:#121212;
+--rch-sel-bg:#a4a4a4;
+
+/* ANSI 0-7 */
+--rch-black:#121212;
+--rch-red:#e19e74;
+--rch-green:#a5a297;
+--rch-yellow:#c6c4b0;
+--rch-blue:#605d5b;
+--rch-magenta:#8a8575;
+--rch-cyan:#c2bbb0;
+--rch-white:#dbd9d3;
+
+/* ANSI 8-15 (bright) */
+--rch-black-br:#383735;
+--rch-red-br:#984b1e;
+--rch-green-br:#637380;
+--rch-yellow-br:#8f4445;
+--rch-blue-br:#b7a798;
+--rch-magenta-br:#b3adad;
+--rch-cyan-br:#90947a;
+--rch-white-br:#a4a4a4;
+
+/* derived surfaces */
+--rch-surface-1:#171716;
+--rch-surface-2:#1e1e1c;
+--rch-surface-3:#262523;
+--rch-surface-4:#2f2e2b;
+
+/* ---- semantic aliases ---- */
+--surface-root:var(--rch-bg);
+--surface-panel:var(--rch-surface-1);
+--surface-card:var(--rch-surface-2);
+--surface-raised:var(--rch-surface-3);
+--surface-input:#0e0e0e;
+--surface-hover:var(--rch-surface-3);
+--surface-active:var(--rch-surface-4);
+--surface-selected:var(--rch-black-br);
+
+--text-body:var(--rch-fg);
+--text-bright:var(--rch-white);
+--text-heading:var(--rch-white);
+--text-dim:var(--rch-magenta);
+--text-faint:var(--rch-blue);
+--text-inverse:var(--rch-bg);
+--text-accent:var(--rch-red);
+--text-link:var(--rch-red);
+--text-link-hover:var(--rch-white);
+
+--border-hairline:#242322;
+--border-default:var(--rch-black-br);
+--border-strong:var(--rch-blue);
+--border-focus:var(--rch-red);
+
+--accent:var(--rch-red);
+--accent-dim:var(--rch-red-br);
+--accent-ink:var(--rch-bg);
+
+--status-ok:var(--rch-cyan-br);
+--status-warn:var(--rch-yellow);
+--status-danger:var(--rch-yellow-br);
+--status-critical:var(--rch-red-br);
+--status-info:var(--rch-green-br);
+--status-idle:var(--rch-blue);
+
+--scanline:rgba(164,164,164,.025);/* @kind color */
+--glow-accent:rgba(225,158,116,.18);/* @kind color */
+}
+
+/* ---- tokens/typography.css ---- */
+/* One family, monospaced, everywhere. Scale steps are whole pixels so glyph
+   cells stay on a grid; line-heights are ratios that resolve to whole pixels. */
+:root{
+--fs-3xs:10px;
+--fs-2xs:11px;
+--fs-xs:12px;
+--fs-sm:13px;
+--fs-md:14px;
+--fs-lg:16px;
+--fs-xl:20px;
+--fs-2xl:26px;
+--fs-3xl:34px;
+--fs-4xl:46px;
+
+--lh-tight:1.15;/* @kind font */
+--lh-cell:1.4;/* @kind font */
+--lh-body:1.6;/* @kind font */
+--lh-loose:1.8;/* @kind font */
+
+--fw-light:300;/* @kind font */
+--fw-regular:400;/* @kind font */
+--fw-medium:500;/* @kind font */
+--fw-bold:700;/* @kind font */
+
+--ls-tight:-0.01em;/* @kind font */
+--ls-normal:0;/* @kind font */
+--ls-wide:0.06em;/* @kind font */
+--ls-label:0.14em;/* @kind font */
+--ls-plate:0.34em;/* @kind font */
+
+/* roles */
+--type-plate:var(--fw-bold) var(--fs-3xl)/var(--lh-tight) var(--font-display);
+--type-h1:var(--fw-bold) var(--fs-2xl)/var(--lh-tight) var(--font-display);
+--type-h2:var(--fw-medium) var(--fs-xl)/var(--lh-cell) var(--font-display);
+--type-h3:var(--fw-medium) var(--fs-lg)/var(--lh-cell) var(--font-core);
+--type-body:var(--fw-regular) var(--fs-md)/var(--lh-body) var(--font-body);
+--type-body-sm:var(--fw-regular) var(--fs-sm)/var(--lh-body) var(--font-body);
+--type-code:var(--fw-regular) var(--fs-sm)/var(--lh-cell) var(--font-mono);
+--type-label:var(--fw-medium) var(--fs-2xs)/var(--lh-cell) var(--font-core);
+--type-meta:var(--fw-regular) var(--fs-3xs)/var(--lh-cell) var(--font-core);
+}
+
+/* ---- tokens/spacing.css ---- */
+/* The unit is the character cell: 8px column, 20px row at --fs-md.
+   Everything snaps to the cell so ASCII frames line up. */
+:root{
+--cell-w:8px;
+--cell-h:20px;
+
+--space-0:0;
+--space-px:1px;
+--space-1:2px;
+--space-2:4px;
+--space-3:8px;
+--space-4:12px;
+--space-5:16px;
+--space-6:20px;
+--space-7:24px;
+--space-8:32px;
+--space-9:40px;
+--space-10:56px;
+--space-11:72px;
+
+--gutter-window:12px;
+--gutter-panel:16px;
+--pad-control-y:6px;
+--pad-control-x:12px;
+--pad-panel:16px;
+--pad-cell:8px;
+
+--bar-height:34px;
+--row-height:26px;
+--control-height:30px;
+--control-height-sm:24px;
+--control-height-lg:38px;
+
+--measure-prose:68ch;/* @kind other */
+--measure-code:96ch;/* @kind other */
+}
+
+/* ---- tokens/effects.css ---- */
+/* Rachell is flat. Corners are square (hyprland rounding 0). Depth comes from
+   1px borders and surface value shifts, not shadows. The two shadows below are
+   for floating layers only (dialog, launcher, notification). */
+:root{
+--radius-none:0;
+--radius-hair:1px;
+--radius-sm:2px;
+--radius-pill:999px;
+
+--border-w:1px;/* @kind other */
+--border-w-strong:2px;/* @kind other */
+--rule:1px solid var(--border-default);/* @kind other */
+--rule-hair:1px solid var(--border-hairline);/* @kind other */
+
+--shadow-none:none;
+--shadow-float:0 0 0 1px var(--border-default),0 18px 48px rgba(0,0,0,.65);
+--shadow-toast:0 0 0 1px var(--border-default),0 8px 24px rgba(0,0,0,.55);
+--shadow-inset-well:inset 0 0 0 1px var(--border-hairline);
+--focus-ring:0 0 0 1px var(--border-focus);
+
+--ease-out:cubic-bezier(.2,.6,.35,1);/* @kind other */
+--ease-snap:cubic-bezier(.15,.9,.3,1);/* @kind other */
+--dur-instant:60ms;/* @kind other */
+--dur-fast:110ms;/* @kind other */
+--dur-base:180ms;/* @kind other */
+--dur-slow:320ms;/* @kind other */
+--dur-blink:1s;/* @kind other */
+
+--overlay-scrim:rgba(18,18,18,.72);/* @kind other */
+--blur-scrim:blur(2px);/* @kind other */
+
+--texture-scanline:repeating-linear-gradient(to bottom,var(--scanline) 0 1px,transparent 1px 3px);/* @kind other */
+--texture-grid:linear-gradient(var(--border-hairline) 1px,transparent 1px) 0 0/100% var(--cell-h),linear-gradient(90deg,var(--border-hairline) 1px,transparent 1px) 0 0/var(--cell-w) 100%;/* @kind other */
+}
+
+/* ---- tokens/base.css ---- */
+/* Minimal global resets. Consumers get the terminal baseline for free. */
+html{color-scheme:dark}
+body{margin:0;background:var(--surface-root);color:var(--text-body);font:var(--type-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--text-link);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+a:hover{color:var(--text-link-hover);border-bottom-color:var(--text-link-hover)}
+::selection{background:var(--rch-sel-bg);color:var(--rch-sel-fg)}
+*,*::before,*::after{box-sizing:border-box}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
