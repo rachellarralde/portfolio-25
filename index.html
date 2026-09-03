@@ -54,7 +54,6 @@
           <div class="hero__cta">
             <a href="#work" class="btn btn--lg">view work</a>
             <a href="/hire-me/" class="btn btn--lg btn--secondary">hire me</a>
-            <button class="kc kc--btn" type="button" data-action="terminal"><kbd>t</kbd><span>terminal</span></button>
             <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
           </div>
           <div class="hero__facts">
@@ -64,41 +63,6 @@
         </div>
       </div>
 
-      <!-- alacritty -->
-      <section class="panel panel--accent hero__term" aria-label="terminal">
-        <header class="panel__head"><span class="panel__title">alacritty</span><span class="panel__meta">zsh · interactive</span></header>
-        <div class="panel__body panel__body--flush">
-          <div class="term" id="term">
-            <div id="term-out"></div>
-            <form class="term__form" id="term-form" autocomplete="off">
-              <span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span>
-              <input class="term__input" id="term-input" type="text" aria-label="terminal command" placeholder="type help" spellcheck="false" autocapitalize="off" autocorrect="off" />
-            </form>
-          </div>
-        </div>
-        <footer class="panel__foot">
-          <span class="kc"><kbd>⏎</kbd><span>run</span></span>
-          <span class="kc"><kbd>↑↓</kbd><span>history</span></span>
-          <span class="kc"><kbd>⇥</kbd><span>complete</span></span>
-          <span class="kc"><kbd>^l</kbd><span>clear</span></span>
-        </footer>
-      </section>
-
-      <!-- btop -->
-      <section class="panel hero__mon" aria-label="system monitor">
-        <header class="panel__head"><span class="panel__title">btop</span><span class="panel__meta">uptime <span id="uptime">00:00:00</span></span></header>
-        <div class="panel__body mon">
-          <div class="mon__meters" id="mon-meters"></div>
-          <div class="divider">processes</div>
-          <div class="log" id="mon-procs"></div>
-          <div class="divider">status</div>
-          <div class="mon__row">
-            <span class="badge badge--ok badge--dot">available</span>
-            <span class="badge badge--info">remote · async</span>
-            <a class="kc" href="#contact"><kbd>4</kbd><span>contact</span></a>
-          </div>
-        </div>
-      </section>
     </section>
 
     <!-- ws 2 · work -->
@@ -127,20 +91,17 @@
 
     <!-- ws 4 · contact -->
     <section id="contact" class="screen" aria-label="contact">
-      <h2 class="screen__head"><span class="n">04 //</span> contact <span class="m">uplink</span></h2>
+      <h2 class="screen__head"><span class="n">04 //</span> contact</h2>
       <section class="panel panel--strong">
-        <header class="panel__head"><span class="panel__title">uplink</span><span class="panel__meta">smtp · ready</span></header>
+        <header class="panel__head"><span class="panel__title">contact</span></header>
         <div class="panel__body uplink">
-          <div class="term__line"><span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span><span class="p-cmd">mail -s "hello" rachellarralde@gmail.com</span></div>
           <p class="uplink__mail">rachellarralde@gmail.com</p>
           <div class="uplink__actions">
-            <a href="mailto:rachellarralde@gmail.com" class="btn btn--lg">initiate communication</a>
-            <button class="btn btn--lg btn--secondary" type="button" data-copy="rachellarralde@gmail.com">copy address</button>
-            <a href="/hire-me/" class="btn btn--lg btn--ghost">start a project ▸</a>
+            <button class="btn btn--lg" type="button" data-copy="rachellarralde@gmail.com">copy email</button>
+            <a href="/hire-me/" class="btn btn--lg btn--secondary">hire me</a>
           </div>
           <div class="hero__facts">
-            <span class="badge badge--ok badge--dot">accepting projects</span>
-            <span class="badge">web · automation · qa · ai</span>
+            <span class="badge badge--ok badge--dot">available for work</span>
           </div>
         </div>
       </section>
@@ -150,18 +111,19 @@
   <!-- bottom rail -->
   <footer class="bar bar--bottom">
     <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
-    <button class="kc kc--btn" type="button" data-action="terminal"><kbd>t</kbd><span>terminal</span></button>
     <button class="kc kc--btn" type="button" data-action="help"><kbd>?</kbd><span>help</span></button>
     <button class="kc kc--btn" type="button" data-action="lock"><kbd>l</kbd><span>lock</span></button>
     <span style="margin-left:auto;display:flex;gap:12px;align-items:center">
       <span class="badge badge--info" id="ws-badge">ws 1</span>
-      <span class="bar__copy"><span class="full">© 2025 rachel larralde · </span><span class="hl">system online</span></span>
+      <span class="bar__copy"><span class="full">© <span id="year">2025</span> rachel larralde · </span><span class="hl">system online</span></span>
     </span>
   </footer>
 
   <div id="toasts" class="toasts" aria-live="polite"></div>
 
   <script src="js/rachell-os.js" type="module"></script>
+  <script src="js/theme-switcher.js" type="module"></script>
+  <script src="js/ascii-bg.js" type="module"></script>
 </body>
 
 </html>

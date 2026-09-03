@@ -306,3 +306,34 @@ a{border-bottom:none}
   html{scroll-behavior:auto}
   .cursor{animation:none}
 }
+
+/* hire · email reveal */
+[hidden]{display:none!important}
+#reveal-mail{min-height:1.2em;margin:var(--space-5) 0}
+#reveal-mail.is-revealed{animation:reveal-in .32s ease-out}
+@keyframes reveal-in{from{opacity:.4;filter:blur(3px)}to{opacity:1;filter:none}}
+
+/* hire · single block */
+.desktop--single{place-content:center;justify-items:center;min-height:calc(100vh - 96px)}
+.hire{width:100%;max-width:760px}
+.hire__body{display:flex;flex-direction:column;gap:var(--space-5)}
+.hire__body .divider{margin-top:var(--space-4)}
+.hire__body .faq{margin:0 calc(var(--space-4) * -1)}
+.hire__body .brief__p{margin:0}
+#reveal-mail:empty{display:none}
+
+/* accent palette switcher (dev widget) */
+.palette{position:fixed;right:16px;bottom:44px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:6px;font:var(--type-meta)}
+.palette__toggle{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--surface-panel);border:1px solid var(--border-default);color:var(--text-dim);cursor:pointer;font:inherit;letter-spacing:var(--ls-label);text-transform:uppercase}
+.palette__toggle:hover{border-color:var(--accent);color:var(--text-bright)}
+.palette__name{color:var(--accent)}
+.palette__list{display:flex;flex-direction:column;background:var(--surface-panel);border:1px solid var(--border-default);padding:4px;gap:2px}
+.palette__sw{display:flex;align-items:center;gap:8px;padding:5px 10px;background:none;border:0;cursor:pointer;color:var(--text-dim);font:inherit;text-transform:uppercase;letter-spacing:var(--ls-label)}
+.palette__sw:hover{background:var(--surface-hover);color:var(--text-bright)}
+.palette__sw.is-active{color:var(--text-bright)}
+.palette__dot{width:10px;height:10px;background:var(--sw);border:1px solid var(--border-hairline);flex:none}
+
+/* animated ascii background */
+html{background:var(--surface-root)}
+body{background:transparent}
+.ascii-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.9}

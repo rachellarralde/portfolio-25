@@ -164,6 +164,7 @@ async function boot() {
 /* ---------- top bar: clock, meters ---------- */
 function initBar() {
   const c = $('#clock'), d = $('#date');
+  const yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear();
   const tick = () => { const t = new Date(); if (c) c.textContent = [t.getHours(), t.getMinutes(), t.getSeconds()].map(pad2).join(':'); if (d) d.textContent = t.toLocaleDateString('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).toLowerCase().replace(/,/g, ''); };
   tick(); setInterval(tick, 1000);
   const cpu = $('#bar-cpu'), mem = $('#bar-mem');
@@ -449,6 +450,7 @@ function lock() {
     e.preventDefault(); const pw = $('#lock-pw', lockEl).value;
     if (pw.length < 3) { attempts--; $('#lock-err', lockEl).textContent = attempts > 0 ? `auth rejected — ${attempts} attempts left` : 'auth rejected — try anything longer'; if (attempts <= 0) attempts = 3; return; }
     on = false; rain.stop(); lockEl.remove(); lockEl = null; document.body.classList.remove('is-locked');
+    try { sessionStorage.setItem('rch-unlocked', '1'); } catch (e) { /* private mode */ }
     toast({ tone: 'ok', title: 'session', body: 'unlocked — welcome back' });
   });
   $('#lock-pw', lockEl).focus();
@@ -495,7 +497,9 @@ function initHire() {
 document.addEventListener('DOMContentLoaded', async () => {
   initBar(); initWorkspaces(); initHero(); initProjects(); initAbout(); initContact(); initTerminal(); initKeys(); initHire();
   await boot();
-  if (!sessionStorage.getItem('rch-greeted')) {
+  const unlocked = (() => { try { return sessionStorage.getItem('rch-unlocked'); } catch (e) { return null; } })();
+  if (!unlocked) lock();
+  if (unlocked && !sessionStorage.getItem('rch-greeted')) {
     toast({ tone: 'ok', title: 'session', body: `${owner.host} online · ⌘k launcher · ? help` });
     try { sessionStorage.setItem('rch-greeted', '1'); } catch (e) { /* private mode */ }
   }

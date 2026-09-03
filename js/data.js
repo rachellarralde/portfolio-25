@@ -21,6 +21,26 @@ export const about = [
 
 export const projects = [
   {
+    id: 'yardflow',
+    title: 'YARDFLOW',
+    category: 'marketplace web app',
+    tags: ['web', 'ai'],
+    description: 'on-demand industrial yard space — a matching engine that connects tenants with qualified hosts.',
+    imageUrl: '/assets/yardflow.png',
+    liveUrl: 'https://getyardflow.com',
+    featured: true,
+  },
+  {
+    id: 'rachelnocode',
+    title: 'RACHEL NOCODE',
+    category: 'content platform · ai tooling',
+    tags: ['web', 'ai'],
+    description: 'templates, tiny tools, and vibe-coded builds paired with weekly ai tutorials.',
+    imageUrl: '/assets/rachelnocode.png',
+    liveUrl: 'https://rachelnocode.com',
+    featured: true,
+  },
+  {
     id: 'arcade',
     title: 'ARCADE',
     category: 'audio sampler plug-in · output',
@@ -88,12 +108,14 @@ export const filters = [
 ];
 
 export const skills = [
-  { id: 'languages', name: 'languages', tags: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'SQL (PostgreSQL)', 'HTML5', 'CSS3/SASS', 'Markdown'] },
-  { id: 'frameworks', name: 'frameworks & libraries', tags: ['React', 'Next.js', 'Node.js', 'Express', 'Flask', 'FastAPI', 'Material-UI', 'TailwindCSS'] },
-  { id: 'automation', name: 'automation & testing', tags: ['Playwright', 'Cypress', 'Postman', 'Pytest', 'GitHub Actions', 'Jenkins', 'CircleCI', 'BrowserStack', 'Selenium', 'TestNG', 'Appium', 'Sauce Labs', 'Rest Assured', 'Cucumber', 'Jasmine', 'Protractor', 'TDD / BDD', 'Agile Management'] },
-  { id: 'devops', name: 'devops & cloud', tags: ['Docker', 'AWS', 'GCP', 'Firebase', 'Netlify', 'Vercel', 'CI/CD Pipelines', 'MockServer'] },
-  { id: 'tools', name: 'developer tools', tags: ['Git / GitHub', 'VS Code', 'Webpack / Babel', 'npm / yarn', 'Chrome DevTools', 'Notion', 'Claude Code', 'Gemini CLI', 'GPT-Codex', 'Cursor', 'N8N', 'AI/ML Automation'] },
-  { id: 'design', name: 'design tools', tags: ['Figma', 'Adobe Suite', 'Sketch', 'Framer', 'Adobe Experience Manager', 'CMS'] },
+  { id: 'languages', name: 'languages', tags: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'Swift', 'SQL (PostgreSQL)', 'Bash / Zsh', 'Lua', 'HTML5', 'CSS3/SASS', 'Markdown'] },
+  { id: 'ai', name: 'ai engineering', tags: ['Claude API', 'Claude Agent SDK', 'MCP (Model Context Protocol)', 'OpenAI API', 'Tool / function calling', 'Agent orchestration', 'RAG pipelines', 'Embeddings', 'Vector search (pgvector)', 'Prompt engineering', 'Context engineering', 'LLM evals', 'Streaming (SSE)', 'Structured outputs', 'LangChain', 'Hugging Face', 'Ollama (local models)', 'Whisper / speech-to-text'] },
+  { id: 'frameworks', name: 'frameworks & libraries', tags: ['React', 'Next.js (App Router)', 'React Native', 'SwiftUI', 'Node.js', 'Express', 'FastAPI', 'Flask', 'Vite', 'TanStack Query', 'Zustand', 'TailwindCSS', 'shadcn/ui', 'Framer Motion', 'Material-UI'] },
+  { id: 'backend', name: 'backend & data', tags: ['PostgreSQL', 'Supabase', 'Convex', 'Firebase / Firestore', 'Redis', 'MongoDB', 'SQLite', 'Prisma', 'Drizzle ORM', 'REST APIs', 'Webhooks', 'Auth (OAuth / JWT)', 'Stripe', 'Queues & background jobs'] },
+  { id: 'automation', name: 'automation & testing', tags: ['Playwright', 'Cypress', 'Selenium', 'Appium', 'Pytest', 'Vitest / Jest', 'Postman', 'Rest Assured', 'Cucumber', 'TestNG', 'Jasmine', 'BrowserStack', 'Sauce Labs', 'MockServer', 'k6 load testing', 'Accessibility (axe / WCAG)', 'AI regression testing', 'TDD / BDD', 'Agile management'] },
+  { id: 'devops', name: 'devops & cloud', tags: ['Docker', 'AWS (Lambda / S3)', 'GCP', 'Vercel', 'Netlify', 'Cloudflare Workers', 'Railway', 'GitHub Actions', 'Jenkins', 'CircleCI', 'CI/CD pipelines', 'Sentry / observability'] },
+  { id: 'tools', name: 'developer tools', tags: ['Git / GitHub', 'Claude Code', 'Cursor', 'GPT-Codex', 'Gemini CLI', 'n8n', 'Zapier', 'VS Code', 'Neovim', 'Xcode', 'Chrome DevTools', 'Webpack / Babel', 'npm / pnpm', 'Notion'] },
+  { id: 'design', name: 'design tools', tags: ['Figma', 'Framer', 'Sketch', 'Adobe Suite', 'Adobe Experience Manager', 'Design systems', 'CMS'] },
 ];
 
 export const sections = [

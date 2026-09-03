@@ -36,118 +36,55 @@
     </div>
   </header>
 
-  <main class="desktop">
-    <section id="hero" class="screen" aria-label="brief">
-      <div class="panel panel--flush hero__banner" style="min-height:0">
-        <span class="panel__scan" aria-hidden="true"></span>
-        <div class="hero__inner brief">
-          <div class="term__line"><span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span><span class="p-cmd">./hire --brief</span><span class="cursor" aria-hidden="true"></span></div>
-          <h1 class="brief__h">build <span class="hl">websites</span>, <span class="hl">automations</span>, and <span class="hl">qa systems</span> for creators and small businesses.</h1>
-          <p class="brief__p">streamline the workflow, automate the tedious tasks, and present a professional image to the world.</p>
-          <div class="hero__cta">
-            <a href="#form" class="btn btn--lg">tell me about your project</a>
-            <a href="#portfolio" class="btn btn--lg btn--secondary">see examples</a>
-          </div>
-          <div class="hero__facts">
-            <span class="badge badge--ok badge--dot">accepting projects</span>
-            <span class="badge">project-based pricing</span>
-            <span class="badge">async · regular updates</span>
-          </div>
+  <main class="desktop desktop--single">
+    <section class="panel panel--accent hire" aria-label="hire rachel">
+      <header class="panel__head"><span class="panel__title">hire.txt</span><span class="panel__meta">rachell.dev</span></header>
+      <div class="panel__body hire__body">
+        <h1 class="brief__h">i build <span class="hl">websites</span>, <span class="hl">automations</span>, and <span class="hl">qa systems</span>.</h1>
+        <p class="brief__p">for creators, small businesses, and teams who want less busywork and software that holds up.</p>
+        <div class="hero__facts">
+          <span class="badge badge--ok badge--dot">available for work</span>
+          <span class="badge">project-based pricing</span>
+          <span class="badge">async · regular updates</span>
+        </div>
+
+        <div class="divider">faq</div>
+        <div class="faq" id="faq">
+          <div class="faq__item is-open"><button class="faq__q" aria-expanded="true"><span class="g">▾</span>how long does a project take?</button><p class="faq__a">simple sites: 1–2 weeks. bigger automations or qa setups: 3–4 weeks.</p></div>
+          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>what does it cost?</button><p class="faq__a">project-based, usually $2k–$10k depending on scope. always open to talking it through.</p></div>
+          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>what do you build with?</button><p class="faq__a">whatever fits — modern web frameworks, python/node backends, and automation tools like n8n.</p></div>
+          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>how do we work together?</button><p class="faq__a">async, with regular updates. a short call up front if it helps.</p></div>
+        </div>
+
+        <div class="divider">contact</div>
+        <div class="term__line"><span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span><span class="p-cmd" id="reveal-cmd"></span><span class="cursor" id="reveal-cursor" aria-hidden="true"></span></div>
+        <p class="uplink__mail" id="reveal-mail" aria-live="polite"></p>
+        <div class="hero__cta">
+          <button class="btn btn--lg" type="button" id="reveal-btn">show email</button>
+          <button class="btn btn--lg btn--secondary" type="button" id="reveal-copy" data-copy="rachellarralde@gmail.com" hidden>copy email</button>
+          <a href="/#work" class="btn btn--lg btn--ghost">see my work</a>
         </div>
       </div>
-    </section>
-
-    <section id="who-i-help" class="screen" aria-label="who i help">
-      <h2 class="screen__head"><span class="n">01 //</span> who i help <span class="m">ls ~/clients</span></h2>
-      <div class="tiles">
-        <section class="panel"><header class="panel__head"><span class="panel__title">creators</span><span class="panel__meta">01</span></header><div class="panel__body"><h3 class="svc__title">a polished site for the work</h3><p class="svc__desc">wanting a simple but polished site to showcase their work and connect with their audience.</p></div></section>
-        <section class="panel"><header class="panel__head"><span class="panel__title">small businesses</span><span class="panel__meta">02</span></header><div class="panel__body"><h3 class="svc__title">automations that save hours</h3><p class="svc__desc">needing automations to connect forms to sheets, emails, and crms to save time.</p></div></section>
-        <section class="panel"><header class="panel__head"><span class="panel__title">teams</span><span class="panel__meta">03</span></header><div class="panel__body"><h3 class="svc__title">reliable software, tested</h3><p class="svc__desc">needing qa automation help and test setups to ensure their software is reliable.</p></div></section>
-      </div>
-    </section>
-
-    <section id="services" class="screen" aria-label="services">
-      <h2 class="screen__head"><span class="n">02 //</span> services <span class="m">systemctl list-units</span></h2>
-      <div class="tiles">
-        <section class="panel"><header class="panel__head"><span class="panel__title">website builds</span><span class="badge badge--ok badge--dot">active</span></header><div class="panel__body"><p class="svc__desc">custom, responsive websites built with modern technologies.</p></div></section>
-        <section class="panel"><header class="panel__head"><span class="panel__title">automations</span><span class="badge badge--ok badge--dot">active</span></header><div class="panel__body"><p class="svc__desc">integrations that connect the tools so they work together seamlessly.</p></div></section>
-        <section class="panel"><header class="panel__head"><span class="panel__title">qa automation</span><span class="badge badge--ok badge--dot">active</span></header><div class="panel__body"><p class="svc__desc">robust testing frameworks set up for the application.</p></div></section>
-        <section class="panel"><header class="panel__head"><span class="panel__title">custom solutions</span><span class="badge badge--ok badge--dot">active</span></header><div class="panel__body"><p class="svc__desc">tailored solutions for specific technical challenges.</p></div></section>
-      </div>
-    </section>
-
-    <section id="process" class="screen" aria-label="process">
-      <h2 class="screen__head"><span class="n">03 //</span> process <span class="m">journalctl -f</span></h2>
-      <section class="panel">
-        <header class="panel__head"><span class="panel__title">journalctl -f</span><span class="panel__meta">unit hire.service</span></header>
-        <div class="panel__body log">
-          <div class="log__row log__row--wrap"><span class="log__n">1</span><span class="log__t">step 01</span><span class="log__lvl lvl-ok">ok</span><span class="log__txt"><span class="bright">inquiry</span> — fill out the form below to get started.</span></div>
-          <div class="log__row log__row--wrap"><span class="log__n">2</span><span class="log__t">step 02</span><span class="log__lvl lvl-ok">ok</span><span class="log__txt"><span class="bright">quick call</span> — discuss the needs and see if it is a good fit.</span></div>
-          <div class="log__row log__row--wrap"><span class="log__n">3</span><span class="log__t">step 03</span><span class="log__lvl lvl-ok">ok</span><span class="log__txt"><span class="bright">proposal</span> — a detailed plan and quote.</span></div>
-          <div class="log__row log__row--wrap"><span class="log__n">4</span><span class="log__t">step 04</span><span class="log__lvl lvl-info">info</span><span class="log__txt"><span class="bright">build &amp; handoff</span> — the solution is built and handed over.</span></div>
-        </div>
-      </section>
-    </section>
-
-    <section id="portfolio" class="screen" aria-label="portfolio">
-      <h2 class="screen__head"><span class="n">04 //</span> portfolio <span class="m">~/work · ls -la</span></h2>
-      <div class="filters" id="filters" role="tablist" aria-label="filter projects"></div>
-      <div id="projects-grid" class="proj-grid"><p class="faint">probing projects…</p></div>
-    </section>
-
-    <section id="faq" class="screen" aria-label="faq">
-      <h2 class="screen__head"><span class="n">05 //</span> faq <span class="m">man rachell</span></h2>
-      <section class="panel">
-        <header class="panel__head"><span class="panel__title">man rachell</span><span class="panel__meta">4 entries</span></header>
-        <div class="panel__body panel__body--flush faq" id="faq">
-          <div class="faq__item is-open"><button class="faq__q" aria-expanded="true"><span class="g">▾</span>what is the typical timeline?</button><p class="faq__a">timelines vary by project. simple sites take 1–2 weeks; complex automations or qa setups may take 3–4 weeks.</p></div>
-          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>what is the pricing ballpark?</button><p class="faq__a">project-based pricing, generally $2k to $10k. cost depends on scope and complexity, and negotiation is always open to find a solution that works.</p></div>
-          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>what is the tech stack?</button><p class="faq__a">any stack the project needs — modern web frameworks, specific backend languages, or unique automation tools.</p></div>
-          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>how does the work happen?</button><p class="faq__a">asynchronously, with regular updates. communication is key.</p></div>
-        </div>
-        <footer class="panel__foot"><span class="kc"><kbd>▸</kbd><span>expand</span></span><span class="kc"><kbd>q</kbd><span>quit</span></span></footer>
-      </section>
-    </section>
-
-    <section id="form" class="screen" aria-label="start a project">
-      <h2 class="screen__head"><span class="n">06 //</span> start a project <span class="m">./hire --submit</span></h2>
-      <section class="panel panel--accent" style="max-width:760px">
-        <header class="panel__head"><span class="panel__title">brief</span><span class="panel__meta">posts to n8n webhook</span></header>
-        <div class="panel__body">
-          <form id="hire-me-form" class="form" data-webhook="https://rachelldev.app.n8n.cloud/webhook/hire-me">
-            <div class="form__row">
-              <label class="field"><span class="field__label">name</span><span class="input"><span class="input__prefix">❯</span><input type="text" name="name" required autocomplete="name"></span></label>
-              <label class="field"><span class="field__label">email</span><span class="input"><span class="input__prefix">@</span><input type="email" name="email" required autocomplete="email"></span></label>
-            </div>
-            <div class="form__row">
-              <label class="field"><span class="field__label">business type</span><span class="input"><span class="input__prefix">▸</span><select name="businessType"><option value="creator">creator</option><option value="small-business">small business</option><option value="team">team / company</option><option value="other">other</option></select><span class="input__suffix">▾</span></span></label>
-              <label class="field"><span class="field__label">budget range</span><span class="input"><span class="input__prefix">$</span><select name="budget"><option value="$2,000 - $5,000">$2,000 – $5,000</option><option value="$5,000 - $10,000">$5,000 – $10,000</option><option value="$10,000+">$10,000+</option><option value="Negotiable">negotiable</option></select><span class="input__suffix">▾</span></span></label>
-            </div>
-            <label class="field"><span class="field__label">timeline</span><span class="input"><span class="input__prefix">⏱</span><input type="text" name="timeline" placeholder="e.g. asap, in a month"></span></label>
-            <label class="field"><span class="field__label">project description</span><span class="input input--area"><span class="input__prefix">#</span><textarea name="message" placeholder="what needs building…"></textarea></span></label>
-            <button type="submit" class="btn btn--lg btn--block" id="submit-btn">send proposal request</button>
-            <div id="form-status" class="form__status" aria-live="polite"></div>
-          </form>
-        </div>
-        <footer class="panel__foot"><span class="kc"><kbd>⏎</kbd><span>send</span></span><span style="margin-left:auto">or email <a class="link" href="mailto:rachellarralde@gmail.com">rachellarralde@gmail.com</a></span></footer>
-      </section>
     </section>
   </main>
 
   <footer class="bar bar--bottom">
     <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
     <a class="kc" href="/#hero"><kbd>1</kbd><span>home</span></a>
-    <a class="kc" href="#form"><kbd>⏎</kbd><span>brief</span></a>
+    <a class="kc" href="#contact"><kbd>⏎</kbd><span>contact</span></a>
     <button class="kc kc--btn" type="button" data-action="lock"><kbd>l</kbd><span>lock</span></button>
     <span style="margin-left:auto;display:flex;gap:12px;align-items:center">
       <span class="badge badge--info" id="ws-badge">hire</span>
-      <span class="bar__copy"><span class="full">© 2025 rachel larralde · </span><span class="hl">system online</span></span>
+      <span class="bar__copy"><span class="full">© <span id="year">2025</span> rachel larralde · </span><span class="hl">system online</span></span>
     </span>
   </footer>
 
   <div id="toasts" class="toasts" aria-live="polite"></div>
 
   <script src="../js/rachell-os.js" type="module"></script>
+  <script src="../js/hire-reveal.js" type="module"></script>
+  <script src="../js/theme-switcher.js" type="module"></script>
+  <script src="../js/ascii-bg.js" type="module"></script>
 </body>
 
 </html>
