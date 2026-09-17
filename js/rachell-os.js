@@ -11,8 +11,8 @@ const pad2 = (n) => String(n).padStart(2, '0');
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const bootedAt = Date.now();
-const onHire = location.pathname.startsWith('/hire-me');
-const home = (hash) => (onHire ? '/' + hash : hash);
+const onSubpage = /^\/(hire-me|lovable-rescue)(\/|$)/.test(location.pathname);
+const home = (hash) => (onSubpage ? '/' + hash : hash);
 
 /* ---------- AsciiBanner: 5-row block alphabet ---------- */
 const GLYPHS = {"0":[" ## ","#  #","#  #","#  #"," ## "],"1":["  # "," ## ","  # ","  # ","####"],"2":[" ## ","#  #","  # "," #  ","####"],"3":["### ","   #"," ## ","   #","### "],"4":["#  #","#  #","####","   #","   #"],"5":["####","#   ","### ","   #","### "],"6":[" ###","#   ","### ","#  #"," ## "],"7":["####","   #","  # "," #  "," #  "],"8":[" ## ","#  #"," ## ","#  #"," ## "],"9":[" ## ","#  #"," ###","   #","### "],"A":[" ## ","#  #","####","#  #","#  #"],"B":["### ","#  #","### ","#  #","### "],"C":[" ###","#   ","#   ","#   "," ###"],"D":["### ","#  #","#  #","#  #","### "],"E":["####","#   ","### ","#   ","####"],"F":["####","#   ","### ","#   ","#   "],"G":[" ###","#   ","# ##","#  #"," ###"],"H":["#  #","#  #","####","#  #","#  #"],"I":["####","  # ","  # ","  # ","####"],"J":["####","   #","   #","#  #"," ## "],"K":["#  #","# # ","##  ","# # ","#  #"],"L":["#   ","#   ","#   ","#   ","####"],"M":["#  #","####","####","#  #","#  #"],"N":["#  #","## #","####","# ##","#  #"],"O":[" ## ","#  #","#  #","#  #"," ## "],"P":["### ","#  #","### ","#   ","#   "],"Q":[" ## ","#  #","#  #","# ##"," ###"],"R":["### ","#  #","### ","# # ","#  #"],"S":[" ###","#   "," ## ","   #","### "],"T":["####","  # ","  # ","  # ","  # "],"U":["#  #","#  #","#  #","#  #"," ## "],"V":["#  #","#  #","#  #"," ## "," ## "],"W":["#  #","#  #","####","####","#  #"],"X":["#  #"," ## "," ## "," ## ","#  #"],"Y":["#  #","#  #"," ## ","  # ","  # "],"Z":["####","   #"," ## ","#   ","####"]," ":["    ","    ","    ","    ","    "],".":["    ","    ","    ","    "," #  "],"-":["    ","    ","####","    ","    "],"/":["   #","  # "," #  ","#   ","    "],":":["    ","  # ","    ","  # ","    "],"!":["  # ","  # ","  # ","    ","  # "]};
@@ -393,11 +393,11 @@ function goTo(hash) {
 let launcherEl = null, launcherSel = 0, launcherItems = [];
 function launcherCatalog() {
   const items = [
-    ...sections.map((s) => ({ id: 'go-' + s.id, label: `goto ${s.label}`, meta: 'workspace ' + s.n, run: () => (onHire ? (location.href = '/#' + s.id) : goTo('#' + s.id)) })),
+    ...sections.map((s) => ({ id: 'go-' + s.id, label: `goto ${s.label}`, meta: 'workspace ' + s.n, run: () => (onSubpage ? (location.href = '/#' + s.id) : goTo('#' + s.id)) })),
     { id: 'hire', label: 'hire me', meta: 'start a project', run: () => (location.href = '/hire-me/') },
     { id: 'mail', label: `mail ${owner.email}`, meta: 'uplink', run: () => (location.href = 'mailto:' + owner.email) },
     ...projects.map((p) => ({ id: 'p-' + p.id, label: `open ${p.title.toLowerCase()}`, meta: p.tags.join(' · '), run: () => window.open(p.liveUrl, '_blank', 'noopener') })),
-    { id: 'term', label: 'terminal', meta: 'focus shell', run: () => { if (onHire) location.href = '/#hero'; else { goTo('#hero'); focusTerminal(); } } },
+    { id: 'term', label: 'terminal', meta: 'focus shell', run: () => { if (onSubpage) location.href = '/#hero'; else { goTo('#hero'); focusTerminal(); } } },
     { id: 'help', label: 'help', meta: 'commands', run: () => runCommand('help', true) },
     { id: 'lock', label: 'lock', meta: 'hyprlock', run: lock },
   ];
@@ -466,7 +466,7 @@ function initKeys() {
     if (e.key === '?') { e.preventDefault(); runCommand('help', true); }
     else if (e.key === 't') { e.preventDefault(); if (termInput) { goTo('#hero'); focusTerminal(); } else location.href = '/#hero'; }
     else if (e.key === 'l') { e.preventDefault(); lock(); }
-    else if (/^[1-4]$/.test(e.key)) { const s = sections[Number(e.key) - 1]; if (s) onHire ? (location.href = '/#' + s.id) : goTo('#' + s.id); }
+    else if (/^[1-4]$/.test(e.key)) { const s = sections[Number(e.key) - 1]; if (s) onSubpage ? (location.href = '/#' + s.id) : goTo('#' + s.id); }
   });
 }
 
