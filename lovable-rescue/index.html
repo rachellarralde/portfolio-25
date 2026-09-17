@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lovable Rescue — 48h audit and hands-on fixes for broken Lovable/Bolt handoffs. Fixed pricing from $299." />
+  <meta name="author" content="Rachel Larralde" />
+  <meta name="theme-color" content="#121212" />
+  <link rel="icon" href="/favicon.png" />
+  <title>lovable rescue // rachell.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../css/rachell-tokens.css" />
+  <link rel="stylesheet" href="../css/rachell.css" />
+</head>
+
+<body>
+  <header class="bar bar--top" id="topbar">
+    <div class="bar__cell bar__left">
+      <button class="bar__launch" id="launcher-btn" aria-label="open launcher" title="launcher ⌘k">◆</button>
+      <nav class="ws" aria-label="workspaces">
+        <a href="/#hero" class="ws__tab"><span class="ws__n">1</span><span class="lbl">home</span></a>
+        <a href="/#work" class="ws__tab"><span class="ws__n">2</span><span class="lbl">work</span></a>
+        <a href="/#about" class="ws__tab"><span class="ws__n">3</span><span class="lbl">about</span></a>
+        <a href="/#contact" class="ws__tab"><span class="ws__n">4</span><span class="lbl">contact</span></a>
+        <a href="/hire-me/" class="ws__tab ws__tab--hire"><span class="ws__n">▸</span><span class="lbl">hire me</span></a>
+      </nav>
+    </div>
+    <div class="bar__cell bar__center"><span id="clock">--:--:--</span>&nbsp;·&nbsp;<span id="date"></span></div>
+    <div class="bar__cell bar__right">
+      <span id="bar-cpu" class="meter meter--sm" aria-hidden="true"></span>
+      <span id="bar-mem" class="meter meter--sm" aria-hidden="true"></span>
+      <span class="badge badge--ok badge--dot">online</span>
+      <button class="bar__icon" id="power-btn" aria-label="lock session" title="lock (l)">⏻</button>
+    </div>
+  </header>
+
+  <main class="desktop desktop--single">
+    <section class="panel panel--accent rescue" aria-label="lovable rescue offer">
+      <header class="panel__head"><span class="panel__title">rescue.txt</span><span class="panel__meta">rachell.dev</span></header>
+      <div class="panel__body rescue__body">
+        <h1 class="brief__h">stuck with a broken <span class="hl">lovable</span> or <span class="hl">bolt</span> handoff?</h1>
+        <p class="brief__p">you shipped fast with vibe coding — now deploy fails, auth is wide open, or the app doesn't match the spec. i audit what's broken and get you to a working handoff.</p>
+        <div class="hero__facts">
+          <span class="badge badge--warn badge--dot">48h audit turnaround</span>
+          <span class="badge">fixed pricing</span>
+          <span class="badge">no scope creep</span>
+        </div>
+
+        <div class="divider">pricing</div>
+        <div class="tiers" role="list">
+          <article class="tier panel" role="listitem">
+            <header class="tier__head"><span class="tier__n">01</span><span class="tier__name">audit</span><span class="tier__price">$299</span></header>
+            <div class="tier__body">
+              <p class="tier__tagline">48h audit — written report</p>
+              <ul class="tier__list">
+                <li>PRD/spec vs what Lovable/Bolt actually shipped</li>
+                <li>security &amp; auth gaps (RLS, env vars, exposed keys)</li>
+                <li>deploy blockers (build, hosting, domain, DB)</li>
+                <li>priority-ranked fix list you can hand to any dev</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tier panel panel--accent" role="listitem">
+            <header class="tier__head"><span class="tier__n">02</span><span class="tier__name">audit + repair</span><span class="tier__price">$599</span></header>
+            <div class="tier__body">
+              <p class="tier__tagline">everything in audit, plus a fix plan &amp; one repair session</p>
+              <ul class="tier__list">
+                <li>full audit report (above)</li>
+                <li>step-by-step fix plan with effort estimates</li>
+                <li>1 live repair session — i fix the highest-impact blocker with you</li>
+                <li>session notes &amp; next steps for remaining work</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tier panel" role="listitem">
+            <header class="tier__head"><span class="tier__n">03</span><span class="tier__name">full rescue</span><span class="tier__price">$999</span></header>
+            <div class="tier__body">
+              <p class="tier__tagline">rescue to working handoff — scope cap</p>
+              <ul class="tier__list">
+                <li>audit + fix plan + up to 3 repair sessions</li>
+                <li>deploy to production on your stack</li>
+                <li>auth &amp; env wired correctly</li>
+                <li>handoff doc: architecture, runbook, known limits</li>
+              </ul>
+              <div class="tier__scope">
+                <p class="tier__scope-label">in scope</p>
+                <ul class="tier__list tier__list--compact">
+                  <li>one app (single repo / Lovable project)</li>
+                  <li>deploy, auth, env, critical path bugs</li>
+                  <li>≤5 pages / routes, one backend</li>
+                </ul>
+                <p class="tier__scope-label">out of scope</p>
+                <ul class="tier__list tier__list--compact">
+                  <li>full rewrites or new features</li>
+                  <li>mobile apps, multi-tenant rebuilds</li>
+                  <li>ongoing maintenance after handoff</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="divider">fit check</div>
+        <div class="fit">
+          <section class="fit__col">
+            <h2 class="fit__h"><span class="g">▸</span> for you if</h2>
+            <ul class="fit__list">
+              <li>Lovable or Bolt generated an app that won't deploy or stay up</li>
+              <li>you inherited a vibe-coded MVP with no docs or tests</li>
+              <li>auth, RLS, or API keys are clearly wrong and you need a second pair of eyes</li>
+              <li>you want a fixed-price rescue, not an open-ended agency retainer</li>
+            </ul>
+          </section>
+          <section class="fit__col">
+            <h2 class="fit__h"><span class="g">▸</span> not for you if</h2>
+            <ul class="fit__list fit__list--dim">
+              <li>you need a product built from scratch (see <a class="link" href="/hire-me/">hire me</a>)</li>
+              <li>you want unlimited scope or a full rewrite</li>
+              <li>the codebase is abandoned with no repo access</li>
+              <li>you're shopping for the cheapest hourly dev — this is fixed rescue pricing</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="divider">start</div>
+        <div class="term__line"><span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span><span class="p-cmd">mail rescue@agentmail</span></div>
+        <p class="uplink__mail">rachelnocode@agentmail.to</p>
+        <div class="hero__cta">
+          <a class="btn btn--lg" href="mailto:rachelnocode@agentmail.to?subject=Lovable%20Rescue%20%E2%80%94%20audit%20request">email me</a>
+          <button class="btn btn--lg btn--secondary" type="button" data-copy="rachelnocode@agentmail.to">copy email</button>
+          <a href="/hire-me/" class="btn btn--lg btn--ghost">general hire</a>
+        </div>
+        <p class="brief__p faint">reply with your repo link (or Lovable export), what's broken, and which tier you want. i'll confirm scope before you pay — no checkout here, just email.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bar bar--bottom">
+    <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
+    <a class="kc" href="/#hero"><kbd>1</kbd><span>home</span></a>
+    <a class="kc" href="/hire-me/"><kbd>h</kbd><span>hire</span></a>
+    <button class="kc kc--btn" type="button" data-action="lock"><kbd>l</kbd><span>lock</span></button>
+    <span style="margin-left:auto;display:flex;gap:12px;align-items:center">
+      <span class="badge badge--info" id="ws-badge">rescue</span>
+      <span class="bar__copy"><span class="full">© <span id="year">2025</span> rachel larralde · </span><span class="hl">system online</span></span>
+    </span>
+  </footer>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="../js/rachell-os.js" type="module"></script>
+  <script src="../js/theme-switcher.js" type="module"></script>
+  <script src="../js/ascii-bg.js" type="module"></script>
+</body>
+
+</html>

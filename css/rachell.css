@@ -322,6 +322,32 @@ a{border-bottom:none}
 .hire__body .brief__p{margin:0}
 #reveal-mail:empty{display:none}
 
+/* ---------- lovable rescue ---------- */
+.rescue{width:100%;max-width:960px}
+.rescue__body{display:flex;flex-direction:column;gap:var(--space-5)}
+.rescue__body .divider{margin-top:var(--space-4)}
+.tiers{display:grid;gap:var(--gutter-window);grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tier{--pb:var(--border-default);display:flex;flex-direction:column;min-width:0}
+.tier__head{display:flex;align-items:baseline;gap:var(--space-3);padding:var(--space-3) var(--space-4);border-bottom:var(--border-w) solid var(--pb);font:var(--type-label);letter-spacing:var(--ls-label);text-transform:uppercase}
+.tier__n{color:var(--text-faint);flex:none}
+.tier__name{color:var(--text-bright);flex:1;min-width:0}
+.tier__price{color:var(--accent);font:var(--type-h3);letter-spacing:var(--ls-tight);text-transform:none;flex:none}
+.tier__body{padding:var(--space-4);display:grid;gap:var(--space-3);flex:1}
+.tier__tagline{font:var(--type-body-sm);color:var(--text-body);margin:0}
+.tier__list{margin:0;padding:0;list-style:none;display:grid;gap:var(--space-2);font:var(--type-body-sm);color:var(--text-body)}
+.tier__list li{display:flex;gap:var(--space-2);align-items:baseline}
+.tier__list li::before{content:"▸";color:var(--accent);flex:none;font-size:var(--fs-2xs)}
+.tier__list--compact{gap:var(--space-1);font:var(--type-meta);color:var(--text-dim)}
+.tier__scope{display:grid;gap:var(--space-2);margin-top:var(--space-2);padding-top:var(--space-3);border-top:var(--rule-hair)}
+.tier__scope-label{font:var(--type-meta);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-faint);margin:0}
+.fit{display:grid;gap:var(--gutter-window);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.fit__h{display:flex;align-items:center;gap:var(--space-2);font:var(--type-label);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-bright);margin:0 0 var(--space-3)}
+.fit__h .g{color:var(--accent)}
+.fit__list{margin:0;padding:0;list-style:none;display:grid;gap:var(--space-2);font:var(--type-body-sm);color:var(--text-body)}
+.fit__list li{display:flex;gap:var(--space-2);align-items:baseline}
+.fit__list li::before{content:"·";color:var(--text-faint);flex:none}
+.fit__list--dim{color:var(--text-dim)}
+
 /* accent palette switcher (dev widget) */
 .palette{position:fixed;right:16px;bottom:44px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:6px;font:var(--type-meta)}
 .palette__toggle{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--surface-panel);border:1px solid var(--border-default);color:var(--text-dim);cursor:pointer;font:inherit;letter-spacing:var(--ls-label);text-transform:uppercase}
