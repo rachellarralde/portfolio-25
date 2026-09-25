@@ -1,129 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Rachel Larralde — freelance software development engineer in test, fullstack developer, and context ai engineer. portfolio and hire page." />
-  <meta name="author" content="Rachel Larralde" />
-  <meta name="theme-color" content="#121212" />
-  <link rel="icon" href="favicon.png" />
-  <title>rachell.dev // terminal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/rachell-tokens.css" />
-  <link rel="stylesheet" href="css/rachell.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{var t=localStorage.getItem('rachell-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light')}catch(e){}})();</script>
+  <meta name="theme-color" content="#F5EFE6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/site.js" defer></script>
+
+  <title>Rachel Larralde — engineer in test &amp; fullstack developer</title>
+  <meta name="description" content="Rachel Larralde builds sturdy web and iOS apps, plus the tests and automations that keep them that way. Engineer in test, fullstack developer and context AI engineer.">
+  <meta name="author" content="Rachel Larralde">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rachel Larralde — engineer in test &amp; fullstack developer">
+  <meta property="og:description" content="Sturdy web and iOS apps, plus the tests and automations that keep them that way.">
+  <meta name="twitter:card" content="summary">
 </head>
+<body>
+<div class="page">
 
-<body class="is-booting">
-  <!-- boot splash (BootSequence) -->
-  <div id="boot" class="boot" aria-hidden="true"></div>
-
-  <!-- top rail (waybar) -->
-  <header class="bar bar--top" id="topbar">
-    <div class="bar__cell bar__left">
-      <button class="bar__launch" id="launcher-btn" aria-label="open launcher" title="launcher ⌘k">◆</button>
-      <nav class="ws" aria-label="workspaces">
-        <a href="#hero" class="ws__tab is-active"><span class="ws__n">1</span><span class="lbl">home</span></a>
-        <a href="#work" class="ws__tab"><span class="ws__n">2</span><span class="lbl">work</span></a>
-        <a href="#about" class="ws__tab"><span class="ws__n">3</span><span class="lbl">about</span></a>
-        <a href="#contact" class="ws__tab"><span class="ws__n">4</span><span class="lbl">contact</span></a>
-        <a href="/hire-me/" class="ws__tab ws__tab--hire"><span class="ws__n">▸</span><span class="lbl">hire me</span></a>
+  <header class="site-header">
+    <div class="nav-pill">
+      <a class="wordmark" href="/" aria-label="Rachel Larralde, home">
+        <span class="wordmark__text" aria-hidden="true">rachell</span>
+        <svg class="wordmark__squiggle" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C18 1 30 9 46 5 S78 2 98 6"/></svg>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li class="nav-links__item--desk"><a class="nav-link" href="/" aria-current="page">Home</a></li>
+          <li class="nav-links__item--desk"><a class="nav-link" href="/work/">Work</a></li>
+          <li><a class="nav-hire" href="/hire-me/">Hire me</a></li>
+        </ul>
       </nav>
+      <button type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+        <svg class="theme-toggle__moon" viewBox="0 0 256 256" aria-hidden="true"><path d="M210.69,158.18A88,88,0,1,1,97.82,45.31,96.08,96.08,0,0,0,192,160,96.78,96.78,0,0,0,210.69,158.18Z" opacity="0.2"/><path d="M240,96a8,8,0,0,1-8,8H216v16a8,8,0,0,1-16,0V104H184a8,8,0,0,1,0-16h16V72a8,8,0,0,1,16,0V88h16A8,8,0,0,1,240,96ZM144,56h8v8a8,8,0,0,0,16,0V56h8a8,8,0,0,0,0-16h-8V32a8,8,0,0,0-16,0v8h-8a8,8,0,0,0,0,16Zm72.77,97a8,8,0,0,1,1.43,8A96,96,0,1,1,95.07,37.8a8,8,0,0,1,10.6,9.06A88.07,88.07,0,0,0,209.14,150.33,8,8,0,0,1,216.77,153Zm-19.39,14.88c-1.79.09-3.59.14-5.38.14A104.11,104.11,0,0,1,88,64c0-1.79,0-3.59.14-5.38A80,80,0,1,0,197.38,167.86Z"/></svg>
+        <svg class="theme-toggle__sun" viewBox="0 0 256 256" aria-hidden="true"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"/><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+      </button>
+      <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+        <svg class="ic menu-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9 H20 M4 15 H20"/></svg>
+        <svg class="ic menu-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
+      </button>
     </div>
-    <div class="bar__cell bar__center"><span id="clock">--:--:--</span>&nbsp;·&nbsp;<span id="date"></span></div>
-    <div class="bar__cell bar__right">
-      <span id="bar-cpu" class="meter meter--sm" aria-hidden="true"></span>
-      <span id="bar-mem" class="meter meter--sm" aria-hidden="true"></span>
-      <span class="badge badge--ok badge--dot">online</span>
-      <button class="bar__icon" id="power-btn" aria-label="lock session" title="lock (l)">⏻</button>
-    </div>
+    <nav class="nav-menu" id="site-menu" aria-label="Menu" hidden>
+      <a class="nav-menu__link" href="/" aria-current="page">Home<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></a>
+      <a class="nav-menu__link" href="/work/">Work<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></a>
+      <a class="nav-menu__link" href="/hire-me/">Hire me<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></a>
+    </nav>
   </header>
 
-  <main class="desktop">
-    <!-- ws 1 · home -->
-    <section id="hero" class="screen hero" aria-label="home">
-      <div class="panel panel--flush hero__banner">
-        <div class="hero__rain" id="hero-rain" aria-hidden="true"></div>
-        <span class="panel__scan" aria-hidden="true"></span>
-        <div class="hero__inner">
-          <span class="hero__sub">section 9 // portfolio</span>
-          <pre class="banner" id="banner" aria-label="RACHELL">RACHELL</pre>
-          <h1 class="hero__role"><span class="p-sym">❯</span><span id="role" aria-live="polite">software development engineer in test</span><span class="cursor" aria-hidden="true"></span></h1>
-          <div class="hero__cta">
-            <a href="#work" class="btn btn--lg">view work</a>
-            <a href="/hire-me/" class="btn btn--lg btn--secondary">hire me</a>
-            <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
+  <main class="site-main site-main--home" id="main">
+
+    <section class="bento" aria-label="Intro">
+
+      <article class="card intro">
+        <div class="intro__media">
+          <div class="intro__photo">
+            <div class="intro__figure">
+              <span class="intro__blob intro__blob--coral"></span>
+              <span class="intro__blob intro__blob--butter"></span>
+              <img class="intro__img sticker" src="/assets/site/img/rachel-cutout.png" alt="Rachel Larralde" width="355" height="347">
+              <div class="shades"><img class="shades__img" src="/assets/site/stickers/shades.svg" alt=""></div>
+            </div>
           </div>
-          <div class="hero__facts">
-            <span class="badge badge--ok badge--dot">accepting freelance projects</span>
-            <span class="badge">web · ios · automation · ai</span>
+          <span class="hi-bubble sticker wiggle" aria-hidden="true">hi!</span>
+        </div>
+        <span class="tests-pill sticker wiggle">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 L10 17 L19 7"/></svg>tests passing
+        </span>
+        <div class="intro__body">
+          <span class="hand intro__eyebrow">about me</span>
+          <h1 class="serif display-2 intro__title">Hi, I’m Rachel.</h1>
+          <p class="intro__role">Engineer in test, fullstack developer &amp; context AI engineer</p>
+          <p class="intro__text">I build sturdy web and iOS apps, plus the tests and automations that keep them that way. Lately that means a lot of AI tooling: agents, MCP and Claude.</p>
+          <span class="chip intro__chip"><span class="dot" aria-hidden="true"></span>Open to freelance projects</span>
+        </div>
+      </article>
+
+      <article class="card tools" aria-labelledby="tools-h">
+        <h2 class="hand card-label--lg" id="tools-h">Tools I use daily</h2>
+        <div class="tools__frame">
+          <div class="tools__scroll" tabindex="0" role="region" aria-label="Tools, scrollable">
+            <ul class="tools__grid">
+              <li class="tool" title="Claude Code"><img class="tool__icon wiggle" src="/assets/site/logos/claude.svg" alt="" width="64" height="64"><span class="tool__name">Claude Code</span></li>
+              <li class="tool" title="Cursor"><img class="tool__icon wiggle" src="/assets/site/logos/cursor.svg" alt="" width="64" height="64"><span class="tool__name">Cursor</span></li>
+              <li class="tool" title="Playwright"><img class="tool__icon wiggle" src="/assets/site/logos/playwright.svg" alt="" width="64" height="64"><span class="tool__name">Playwright</span></li>
+              <li class="tool" title="Figma"><img class="tool__icon wiggle" src="/assets/site/logos/figma.svg" alt="" width="64" height="64"><span class="tool__name">Figma</span></li>
+              <li class="tool" title="Supabase"><img class="tool__icon wiggle" src="/assets/site/logos/supabase.svg" alt="" width="64" height="64"><span class="tool__name">Supabase</span></li>
+              <li class="tool" title="Xcode"><img class="tool__icon wiggle" src="/assets/site/logos/xcode.svg" alt="" width="64" height="64"><span class="tool__name">Xcode</span></li>
+              <li class="tool" title="n8n"><img class="tool__icon wiggle" src="/assets/site/logos/n8n.svg" alt="" width="64" height="64"><span class="tool__name">n8n</span></li>
+              <li class="tool" title="Vercel"><img class="tool__icon wiggle" src="/assets/site/logos/vercel.svg" alt="" width="64" height="64"><span class="tool__name">Vercel</span></li>
+              <li class="tool" title="GitHub"><img class="tool__icon wiggle" src="/assets/site/logos/github.svg" alt="" width="64" height="64"><span class="tool__name">GitHub</span></li>
+              <li class="tool" title="Actions"><img class="tool__icon wiggle" src="/assets/site/logos/githubactions.svg" alt="" width="64" height="64"><span class="tool__name">Actions</span></li>
+              <li class="tool" title="Docker"><img class="tool__icon wiggle" src="/assets/site/logos/docker.svg" alt="" width="64" height="64"><span class="tool__name">Docker</span></li>
+              <li class="tool" title="React"><img class="tool__icon wiggle" src="/assets/site/logos/react.svg" alt="" width="64" height="64"><span class="tool__name">React</span></li>
+              <li class="tool" title="Next.js"><img class="tool__icon wiggle" src="/assets/site/logos/nextdotjs.svg" alt="" width="64" height="64"><span class="tool__name">Next.js</span></li>
+              <li class="tool" title="TypeScript"><img class="tool__icon wiggle" src="/assets/site/logos/typescript.svg" alt="" width="64" height="64"><span class="tool__name">TypeScript</span></li>
+              <li class="tool" title="Swift"><img class="tool__icon wiggle" src="/assets/site/logos/swift.svg" alt="" width="64" height="64"><span class="tool__name">Swift</span></li>
+              <li class="tool" title="Python"><img class="tool__icon wiggle" src="/assets/site/logos/python.svg" alt="" width="64" height="64"><span class="tool__name">Python</span></li>
+              <li class="tool" title="Postgres"><img class="tool__icon wiggle" src="/assets/site/logos/postgresql.svg" alt="" width="64" height="64"><span class="tool__name">Postgres</span></li>
+              <li class="tool" title="Node.js"><img class="tool__icon wiggle" src="/assets/site/logos/nodedotjs.svg" alt="" width="64" height="64"><span class="tool__name">Node.js</span></li>
+              <li class="tool" title="Cypress"><img class="tool__icon wiggle" src="/assets/site/logos/cypress.svg" alt="" width="64" height="64"><span class="tool__name">Cypress</span></li>
+              <li class="tool" title="Selenium"><img class="tool__icon wiggle" src="/assets/site/logos/selenium.svg" alt="" width="64" height="64"><span class="tool__name">Selenium</span></li>
+              <li class="tool" title="Appium"><img class="tool__icon wiggle" src="/assets/site/logos/appium.svg" alt="" width="64" height="64"><span class="tool__name">Appium</span></li>
+              <li class="tool" title="Tailwind"><img class="tool__icon wiggle" src="/assets/site/logos/tailwindcss.svg" alt="" width="64" height="64"><span class="tool__name">Tailwind</span></li>
+              <li class="tool" title="Stripe"><img class="tool__icon wiggle" src="/assets/site/logos/stripe.svg" alt="" width="64" height="64"><span class="tool__name">Stripe</span></li>
+              <li class="tool" title="Convex"><img class="tool__icon wiggle" src="/assets/site/logos/convex.svg" alt="" width="64" height="64"><span class="tool__name">Convex</span></li>
+              <li class="tool" title="Notion"><img class="tool__icon wiggle" src="/assets/site/logos/notion.svg" alt="" width="64" height="64"><span class="tool__name">Notion</span></li>
+            </ul>
           </div>
         </div>
+        <span class="hand hand--muted tools__hint">25 tools · scroll for more</span>
+      </article>
+
+      <article class="card now" aria-labelledby="now-h">
+        <h2 class="hand card-label" id="now-h">these days</h2>
+        <ul class="now-list">
+          <li class="now-row">
+            <span class="now-row__icon now-row__icon--sun"><svg class="ic-fill" viewBox="0 0 256 256" aria-hidden="true"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"/><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg></span>
+            <span class="now-row__text"><span class="now-row__title">QA engineer</span><span class="now-row__sub">by day</span></span>
+          </li>
+          <li class="now-row">
+            <span class="now-row__icon now-row__icon--moon"><svg class="ic-fill" viewBox="0 0 256 256" aria-hidden="true"><path d="M210.69,158.18A88,88,0,1,1,97.82,45.31,96.08,96.08,0,0,0,192,160,96.78,96.78,0,0,0,210.69,158.18Z" opacity="0.2"/><path d="M240,96a8,8,0,0,1-8,8H216v16a8,8,0,0,1-16,0V104H184a8,8,0,0,1,0-16h16V72a8,8,0,0,1,16,0V88h16A8,8,0,0,1,240,96ZM144,56h8v8a8,8,0,0,0,16,0V56h8a8,8,0,0,0,0-16h-8V32a8,8,0,0,0-16,0v8h-8a8,8,0,0,0,0,16Zm72.77,97a8,8,0,0,1,1.43,8A96,96,0,1,1,95.07,37.8a8,8,0,0,1,10.6,9.06A88.07,88.07,0,0,0,209.14,150.33,8,8,0,0,1,216.77,153Zm-19.39,14.88c-1.79.09-3.59.14-5.38.14A104.11,104.11,0,0,1,88,64c0-1.79,0-3.59.14-5.38A80,80,0,1,0,197.38,167.86Z"/></svg></span>
+            <span class="now-row__text"><span class="now-row__title">Vibe coder</span><span class="now-row__sub">by night</span></span>
+          </li>
+          <li class="now-row">
+            <span class="now-row__icon now-row__icon--video"><svg class="ic-fill" viewBox="0 0 256 256" aria-hidden="true"><path d="M200,72V184a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H192A8,8,0,0,1,200,72Z" opacity="0.2"/><path d="M251.77,73a8,8,0,0,0-8.21.39L208,97.05V72a16,16,0,0,0-16-16H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V159l35.56,23.71A8,8,0,0,0,248,184a8,8,0,0,0,8-8V80A8,8,0,0,0,251.77,73ZM192,184H32V72H192V184Zm48-22.95-32-21.33V116.28L240,95Z"/></svg></span>
+            <span class="now-row__text"><span class="now-row__title">AI tutorials</span><span class="now-row__sub">weekly on Rachel Nocode</span></span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card love" aria-labelledby="love-h">
+        <h2 class="hand card-label" id="love-h">Things I love beside code</h2>
+        <ul class="love-list">
+          <li class="love-item">
+            <img class="love-item__sticker sticker wiggle" style="--r:-6deg" src="/assets/site/stickers/headphones.svg" alt="" width="70" height="70">
+            <span class="hand love-item__label" style="--r:-4deg">making music</span>
+          </li>
+          <li class="love-item">
+            <img class="love-item__sticker sticker wiggle" style="--r:5deg" src="/assets/site/stickers/play.svg" alt="" width="70" height="70">
+            <span class="hand love-item__label" style="--r:3deg">filming videos</span>
+          </li>
+          <li class="love-item">
+            <img class="love-item__sticker sticker wiggle" style="--r:-5deg" src="/assets/site/stickers/book.svg" alt="" width="70" height="70">
+            <span class="hand love-item__label" style="--r:-2deg">reading</span>
+          </li>
+          <li class="love-item">
+            <img class="love-item__sticker sticker wiggle" style="--r:4deg" src="/assets/site/stickers/cat.svg" alt="" width="70" height="70">
+            <span class="hand love-item__label" style="--r:3deg">my cat, Belly</span>
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+    <section class="selected" aria-labelledby="sel-h">
+      <div class="section-head">
+        <span class="hand hand--coral eyebrow">selected work</span>
+        <h2 class="serif section-title" id="sel-h">A few recent things I’ve built</h2>
       </div>
-
-    </section>
-
-    <!-- ws 2 · work -->
-    <section id="work" class="screen" aria-label="work">
-      <h2 class="screen__head"><span class="n">02 //</span> work <span class="m">~/work · ls -la</span></h2>
-      <div class="filters" id="filters" role="tablist" aria-label="filter projects"></div>
-      <div id="projects-grid" class="proj-grid"><p class="faint">probing projects…</p></div>
-    </section>
-
-    <!-- ws 3 · about -->
-    <section id="about" class="screen" aria-label="about">
-      <h2 class="screen__head"><span class="n">03 //</span> about <span class="m">cat ~/about.txt</span></h2>
-      <div class="tiles tiles--2">
-        <section class="panel">
-          <header class="panel__head"><span class="panel__title">nvim  about.txt</span><span class="panel__meta">markdown · utf-8</span></header>
-          <div class="panel__body prose" id="about-text"></div>
-          <footer class="panel__foot"><span class="kc"><kbd>:q</kbd><span>close</span></span><span class="kc"><kbd>4</kbd><span>contact</span></span><span style="margin-left:auto">NORMAL</span></footer>
-        </section>
-        <section class="panel">
-          <header class="panel__head"><span class="panel__title">skills — btop</span><span class="panel__meta" id="skills-meta"></span></header>
-          <div class="panel__body panel__body--flush skills" id="skills"></div>
-          <footer class="panel__foot"><span class="kc"><kbd>▸</kbd><span>expand</span></span><span class="kc"><kbd>▾</kbd><span>collapse</span></span></footer>
-        </section>
+      <div class="project-grid">
+        <a class="project-card lift" href="https://getyardflow.com" target="_blank" rel="noopener">
+          <img class="project-card__img" src="/assets/site/img/yardflow.jpg" alt="Yardflow screenshot" width="1200" height="750" loading="lazy">
+          <div class="project-card__body">
+            <div class="project-card__head"><h3 class="project-card__title">Yardflow</h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></div>
+            <span class="project-card__cat">Marketplace web app</span>
+            <span class="visually-hidden">(opens in a new tab)</span>
+          </div>
+        </a>
+        <a class="project-card lift" href="https://getflicked.app" target="_blank" rel="noopener">
+          <img class="project-card__img" src="/assets/site/img/flicked.jpg" alt="Get Flicked screenshot" width="1200" height="1079" loading="lazy">
+          <div class="project-card__body">
+            <div class="project-card__head"><h3 class="project-card__title">Get Flicked</h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></div>
+            <span class="project-card__cat">iOS app</span>
+            <span class="visually-hidden">(opens in a new tab)</span>
+          </div>
+        </a>
+        <a class="project-card lift" href="https://www.resumematch.online" target="_blank" rel="noopener">
+          <img class="project-card__img" src="/assets/site/img/resume-match-dashboard.jpg" alt="Resume Match screenshot" width="1200" height="1026" loading="lazy">
+          <div class="project-card__body">
+            <div class="project-card__head"><h3 class="project-card__title">Resume Match</h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></div>
+            <span class="project-card__cat">AI web app</span>
+            <span class="visually-hidden">(opens in a new tab)</span>
+          </div>
+        </a>
+      </div>
+      <div class="btn-row selected__more">
+        <a class="btn lift" href="/work/">View all my work<svg class="ic btn__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 15 L15 9 M10 9 H15 V14"/></svg></a>
       </div>
     </section>
 
-    <!-- ws 4 · contact -->
-    <section id="contact" class="screen" aria-label="contact">
-      <h2 class="screen__head"><span class="n">04 //</span> contact</h2>
-      <section class="panel panel--strong">
-        <header class="panel__head"><span class="panel__title">contact</span></header>
-        <div class="panel__body uplink">
-          <p class="uplink__mail">rachellarralde@gmail.com</p>
-          <div class="uplink__actions">
-            <button class="btn btn--lg" type="button" data-copy="rachellarralde@gmail.com">copy email</button>
-            <a href="/hire-me/" class="btn btn--lg btn--secondary">hire me</a>
-          </div>
-          <div class="hero__facts">
-            <span class="badge badge--ok badge--dot">available for work</span>
-          </div>
-        </div>
-      </section>
+    <section class="card hire-band" aria-labelledby="hire-h">
+      <div class="hire-band__text">
+        <span class="hand hire-band__eyebrow">got a project?</span>
+        <h2 class="serif hire-band__title" id="hire-h">Let’s make something that holds up.</h2>
+        <p class="hire-band__lede">I build websites, automations and QA systems for creators, small businesses and teams.</p>
+        <ul class="chip-row">
+          <li class="chip chip--glass"><span class="dot" aria-hidden="true"></span>Available for work</li>
+          <li class="chip chip--glass">Project-based pricing</li>
+          <li class="chip chip--glass">Async, with regular updates</li>
+        </ul>
+      </div>
+      <div class="hire-band__actions">
+        <a class="btn btn--ink0 lift" href="/hire-me/">Hire me<svg class="ic btn__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 15 L15 9 M10 9 H15 V14"/></svg></a>
+        <a class="hire-band__email" href="mailto:rachelnocode@agentmail.to">or email rachelnocode@agentmail.to</a>
+      </div>
+      <img class="hire-band__sticker sticker wiggle" src="/assets/site/stickers/bug.svg" alt="" width="100" height="100">
     </section>
+
   </main>
 
-  <!-- bottom rail -->
-  <footer class="bar bar--bottom">
-    <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
-    <button class="kc kc--btn" type="button" data-action="help"><kbd>?</kbd><span>help</span></button>
-    <button class="kc kc--btn" type="button" data-action="lock"><kbd>l</kbd><span>lock</span></button>
-    <span style="margin-left:auto;display:flex;gap:12px;align-items:center">
-      <span class="badge badge--info" id="ws-badge">ws 1</span>
-      <span class="bar__copy"><span class="full">© <span id="year">2025</span> rachel larralde · </span><span class="hl">system online</span></span>
-    </span>
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> Rachel Larralde</span>
+    <a class="site-footer__email" href="mailto:rachelnocode@agentmail.to">rachelnocode@agentmail.to</a>
   </footer>
 
-  <div id="toasts" class="toasts" aria-live="polite"></div>
-
-  <script src="js/rachell-os.js" type="module"></script>
-  <script src="js/theme-switcher.js" type="module"></script>
-  <script src="js/ascii-bg.js" type="module"></script>
+</div>
 </body>
-
 </html>

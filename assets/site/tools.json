@@ -1,0 +1,242 @@
+{
+  "home": [
+    {
+      "name": "Claude Code",
+      "slug": "claude"
+    },
+    {
+      "name": "Cursor",
+      "slug": "cursor"
+    },
+    {
+      "name": "Playwright",
+      "slug": "playwright"
+    },
+    {
+      "name": "Figma",
+      "slug": "figma"
+    },
+    {
+      "name": "Supabase",
+      "slug": "supabase"
+    },
+    {
+      "name": "Xcode",
+      "slug": "xcode"
+    },
+    {
+      "name": "n8n",
+      "slug": "n8n"
+    },
+    {
+      "name": "Vercel",
+      "slug": "vercel"
+    },
+    {
+      "name": "GitHub",
+      "slug": "github"
+    },
+    {
+      "name": "Actions",
+      "slug": "githubactions"
+    },
+    {
+      "name": "Docker",
+      "slug": "docker"
+    },
+    {
+      "name": "React",
+      "slug": "react"
+    },
+    {
+      "name": "Next.js",
+      "slug": "nextdotjs"
+    },
+    {
+      "name": "TypeScript",
+      "slug": "typescript"
+    },
+    {
+      "name": "Swift",
+      "slug": "swift"
+    },
+    {
+      "name": "Python",
+      "slug": "python"
+    },
+    {
+      "name": "Postgres",
+      "slug": "postgresql"
+    },
+    {
+      "name": "Node.js",
+      "slug": "nodedotjs"
+    },
+    {
+      "name": "Cypress",
+      "slug": "cypress"
+    },
+    {
+      "name": "Selenium",
+      "slug": "selenium"
+    },
+    {
+      "name": "Appium",
+      "slug": "appium"
+    },
+    {
+      "name": "Tailwind",
+      "slug": "tailwindcss"
+    },
+    {
+      "name": "Stripe",
+      "slug": "stripe"
+    },
+    {
+      "name": "Convex",
+      "slug": "convex"
+    },
+    {
+      "name": "Notion",
+      "slug": "notion"
+    }
+  ],
+  "toolbox": [
+    {
+      "group": "Testing",
+      "items": [
+        {
+          "name": "Playwright",
+          "slug": "playwright"
+        },
+        {
+          "name": "Cypress",
+          "slug": "cypress"
+        },
+        {
+          "name": "Appium",
+          "slug": "appium"
+        },
+        {
+          "name": "Selenium",
+          "slug": "selenium"
+        },
+        {
+          "name": "Pytest",
+          "slug": "pytest"
+        },
+        {
+          "name": "Vitest",
+          "slug": "vitest"
+        },
+        {
+          "name": "k6",
+          "slug": "k6"
+        },
+        {
+          "name": "Postman",
+          "slug": "postman"
+        }
+      ]
+    },
+    {
+      "group": "Building",
+      "items": [
+        {
+          "name": "TypeScript",
+          "slug": "typescript"
+        },
+        {
+          "name": "React",
+          "slug": "react"
+        },
+        {
+          "name": "Next.js",
+          "slug": "nextdotjs"
+        },
+        {
+          "name": "Swift",
+          "slug": "swift"
+        },
+        {
+          "name": "Node.js",
+          "slug": "nodedotjs"
+        },
+        {
+          "name": "FastAPI",
+          "slug": "fastapi"
+        },
+        {
+          "name": "Supabase",
+          "slug": "supabase"
+        },
+        {
+          "name": "Postgres",
+          "slug": "postgresql"
+        }
+      ]
+    },
+    {
+      "group": "AI",
+      "items": [
+        {
+          "name": "Claude",
+          "slug": "claude"
+        },
+        {
+          "name": "Anthropic",
+          "slug": "anthropic"
+        },
+        {
+          "name": "MCP",
+          "slug": "modelcontextprotocol"
+        },
+        {
+          "name": "OpenAI",
+          "slug": "openai"
+        },
+        {
+          "name": "LangChain",
+          "slug": "langchain"
+        },
+        {
+          "name": "Hugging Face",
+          "slug": "huggingface"
+        },
+        {
+          "name": "Ollama",
+          "slug": "ollama"
+        }
+      ]
+    },
+    {
+      "group": "Shipping",
+      "items": [
+        {
+          "name": "Docker",
+          "slug": "docker"
+        },
+        {
+          "name": "Vercel",
+          "slug": "vercel"
+        },
+        {
+          "name": "Actions",
+          "slug": "githubactions"
+        },
+        {
+          "name": "AWS",
+          "slug": "amazonwebservices"
+        },
+        {
+          "name": "Cloudflare",
+          "slug": "cloudflare"
+        },
+        {
+          "name": "n8n",
+          "slug": "n8n"
+        }
+      ]
+    }
+  ]
+}

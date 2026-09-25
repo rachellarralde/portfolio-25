@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><style>.o{fill:#fff;stroke:#fff;stroke-width:12px;stroke-linejoin:round;stroke-linecap:round}
+.ow{fill:none;stroke:#fff;stroke-width:22px;stroke-linecap:round}
+.lnw{fill:none;stroke:#fff;stroke-width:15px;stroke-linecap:round}
+.ln{fill:none;stroke:#211C17;stroke-width:5px;stroke-linecap:round;stroke-linejoin:round}
+.band{fill:none;stroke:#211C17;stroke-width:9px;stroke-linecap:round}
+.f-coral{fill:#E0643F}.f-butter{fill:#F4C95D}.f-teal{fill:#2E7A6E}.f-ink{fill:#211C17}.f-cream{fill:#FFF6E8}.f-sky{fill:#A9CFE8}
+.rj{stroke:#211C17;stroke-width:6px;stroke-linejoin:round}
+.bolt{fill:#F4C95D;stroke:#211C17;stroke-width:4px;stroke-linejoin:round}
+.ck{fill:none;stroke:#FFF6E8;stroke-width:9px;stroke-linecap:round;stroke-linejoin:round}
+.f-orange{fill:#F0923A}.f-pink{fill:#F6B3A6}.f-nose{fill:#E07A7A}
+.ear{fill:#F0923A;stroke:#F0923A;stroke-width:6px;stroke-linejoin:round}
+.stripe{fill:none;stroke:#B8561A;stroke-width:4.5px;stroke-linecap:round}
+.thin{fill:none;stroke:#211C17;stroke-width:2.5px;stroke-linecap:round;stroke-linejoin:round}
+.wh{fill:none;stroke:#fff;stroke-width:9px;stroke-linecap:round}
+.pl{fill:none;stroke:#C9B9A3;stroke-width:3px;stroke-linecap:round}</style>
+<rect class="o" x="10" y="20" width="100" height="80" rx="14"></rect>
+<rect class="f-sky" x="10" y="20" width="100" height="80" rx="14"></rect>
+<rect class="f-ink" x="10" y="20" width="100" height="22" rx="14"></rect><rect class="f-ink" x="10" y="32" width="100" height="10"></rect>
+<circle class="f-coral" cx="23" cy="31" r="4"></circle><circle class="f-butter" cx="35" cy="31" r="4"></circle><circle class="f-cream" cx="47" cy="31" r="4"></circle>
+<rect class="f-cream" x="22" y="54" width="50" height="9" rx="4.5"></rect><rect class="f-cream" x="22" y="69" width="76" height="9" rx="4.5"></rect><rect class="f-butter" x="22" y="84" width="32" height="9" rx="4.5"></rect></svg>

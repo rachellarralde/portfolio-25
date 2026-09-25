@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><style>.o{fill:#fff;stroke:#fff;stroke-width:12px;stroke-linejoin:round;stroke-linecap:round}
+.ow{fill:none;stroke:#fff;stroke-width:22px;stroke-linecap:round}
+.lnw{fill:none;stroke:#fff;stroke-width:15px;stroke-linecap:round}
+.ln{fill:none;stroke:#211C17;stroke-width:5px;stroke-linecap:round;stroke-linejoin:round}
+.band{fill:none;stroke:#211C17;stroke-width:9px;stroke-linecap:round}
+.f-coral{fill:#E0643F}.f-butter{fill:#F4C95D}.f-teal{fill:#2E7A6E}.f-ink{fill:#211C17}.f-cream{fill:#FFF6E8}.f-sky{fill:#A9CFE8}
+.rj{stroke:#211C17;stroke-width:6px;stroke-linejoin:round}
+.bolt{fill:#F4C95D;stroke:#211C17;stroke-width:4px;stroke-linejoin:round}
+.ck{fill:none;stroke:#FFF6E8;stroke-width:9px;stroke-linecap:round;stroke-linejoin:round}
+.f-orange{fill:#F0923A}.f-pink{fill:#F6B3A6}.f-nose{fill:#E07A7A}
+.ear{fill:#F0923A;stroke:#F0923A;stroke-width:6px;stroke-linejoin:round}
+.stripe{fill:none;stroke:#B8561A;stroke-width:4.5px;stroke-linecap:round}
+.thin{fill:none;stroke:#211C17;stroke-width:2.5px;stroke-linecap:round;stroke-linejoin:round}
+.wh{fill:none;stroke:#fff;stroke-width:9px;stroke-linecap:round}
+.pl{fill:none;stroke:#C9B9A3;stroke-width:3px;stroke-linecap:round}</style>
+<path class="wh" d="M40 84 L16 79 M40 89 L16 94 M80 84 L104 79 M80 89 L104 94"></path>
+<path class="o" d="M24 58 L28 16 L54 40 Z M96 58 L92 16 L66 40 Z"></path><ellipse class="o" cx="60" cy="72" rx="42" ry="35"></ellipse>
+<path class="ear" d="M24 58 L28 16 L54 40 Z M96 58 L92 16 L66 40 Z"></path>
+<path class="f-pink" d="M32 44 L33 27 L45 38 Z M88 44 L87 27 L75 38 Z"></path>
+<ellipse class="f-orange" cx="60" cy="72" rx="42" ry="35"></ellipse>
+<path class="stripe" d="M51 41 L53 51 M60 39 V51 M69 41 L67 51 M19 68 L28 70 M19 77 L28 77 M101 68 L92 70 M101 77 L92 77"></path>
+<ellipse class="f-cream" cx="60" cy="87" rx="17" ry="12"></ellipse>
+<ellipse class="f-ink" cx="45" cy="69" rx="4.5" ry="6"></ellipse><ellipse class="f-ink" cx="75" cy="69" rx="4.5" ry="6"></ellipse>
+<circle class="f-cream" cx="46.5" cy="66.5" r="1.6"></circle><circle class="f-cream" cx="76.5" cy="66.5" r="1.6"></circle>
+<path class="f-nose" d="M55.5 79 H64.5 L60 84 Z"></path>
+<path class="thin" d="M60 84 Q57 89 53 87 M60 84 Q63 89 67 87 M40 84 L16 79 M40 89 L16 94 M80 84 L104 79 M80 89 L104 94"></path></svg>

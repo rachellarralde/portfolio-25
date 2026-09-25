@@ -1,0 +1,183 @@
+/* Hire me page — extras on top of /css/site.css */
+
+.site-main--hire { gap: 20px; }
+
+/* ---------- Row 1: hero + say hi ---------- */
+.hire-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+}
+
+.hire-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 52px 56px;
+}
+.hire-hero__eyebrow { font-size: 36px; }
+.hire-hero__title { max-width: 620px; font-size: 62px; }
+.hire-hero__lede { max-width: 560px; }
+.hire-hero__chips { margin-top: 12px; }
+
+.hire-hero__badge {
+  position: absolute;
+  right: 30px;               /* artboard: 44px on an 820px card; card is 800px here */
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.hire-hero__bug { width: 104px; height: 104px; transform: rotate(10deg); }
+.hire-hero__badge-label {
+  font-size: 22px;
+  color: var(--body);
+  white-space: nowrap;
+  transform: rotate(6deg);
+}
+
+.say-hi {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 44px 34px;
+}
+.say-hi__text { display: flex; flex-direction: column; gap: 16px; }
+.say-hi__title { font-size: 34px; }
+.say-hi__actions { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
+.say-hi__label { display: inline-flex; align-items: center; gap: 12px; }
+.say-hi__x { width: 18px; height: 18px; }
+.say-hi__mail { width: 20px; height: 20px; }
+.say-hi__arrow { width: 20px; height: 20px; }
+.say-hi__more {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+}
+.say-hi__more:hover { color: var(--ink); text-decoration: underline; }
+
+/* ---------- Row 2: services ---------- */
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.service { display: flex; flex-direction: column; gap: 12px; padding: 34px 32px; }
+.service__sticker { width: 72px; height: 72px; flex-shrink: 0; }
+.service__text { display: flex; flex-direction: column; gap: 12px; }
+.service__title { margin-top: 6px; font-size: 34px; }
+.service__desc { font-size: 16px; line-height: 1.55; color: var(--body); }
+
+/* ---------- Row 3: FAQ ---------- */
+.faq {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 48px;
+  padding: 48px 56px;
+}
+.faq__head { display: flex; flex-direction: column; gap: 10px; }
+.faq__list { display: flex; flex-direction: column; }
+.faq__item { border-bottom: 1px solid var(--line); }
+
+.faq__q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+  padding: 18px 0;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  list-style: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::marker { content: ''; }
+
+.faq__icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--chip);
+  color: var(--ink);
+  transition: background-color .2s ease, color .2s ease;
+}
+.faq__icon svg { width: 16px; height: 16px; stroke-width: 2.4px; }
+.faq__icon-v { transition: opacity .2s ease; }
+.faq__q:hover .faq__icon { background: var(--line); }
+.faq__item[open] .faq__icon { background: var(--ink); color: var(--card); }
+.faq__item[open] .faq__icon-v { opacity: 0; }
+
+.faq__a {
+  max-width: 620px;
+  margin: 0 0 22px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1099px) {
+  .hire-intro { grid-template-columns: 1fr; }
+  .hire-hero { padding: 48px 44px; }
+  .hire-hero__title { max-width: min(620px, 100% - 140px); font-size: clamp(46px, 6vw, 62px); }
+  .hire-hero__eyebrow { max-width: calc(100% - 140px); }
+
+  .say-hi {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 32px;
+    padding: 40px 44px;
+  }
+
+  .faq { grid-template-columns: 220px minmax(0, 1fr); gap: 32px; padding: 44px; }
+}
+
+/* Services: one per row (sticker beside text) below the nav switch */
+@media (max-width: 899px) {
+  .services { grid-template-columns: 1fr; }
+  .service { flex-direction: row; align-items: center; gap: 22px; padding: 28px 32px; }
+  .service__text { gap: 6px; }
+  .service__title { margin-top: 0; }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 699px) {
+  .site-main--hire { gap: 16px; margin-top: 44px; }
+
+  .hire-hero { gap: 14px; padding: 36px 24px 28px; }
+  .hire-hero__eyebrow { max-width: none; font-size: 30px; }
+  .hire-hero__title { max-width: none; font-size: 46px; }
+  .hire-hero__chips { margin-top: 6px; gap: 8px; }
+  .hire-hero__badge { right: 14px; top: -34px; }
+  .hire-hero__bug { width: 76px; height: 76px; }
+  .hire-hero__badge-label { font-size: 19px; }
+
+  .say-hi { display: flex; align-items: stretch; gap: 20px; padding: 32px 24px 24px; }
+  .say-hi__text { gap: 12px; }
+  .say-hi__title { font-size: 32px; }
+  .say-hi__actions { margin-top: 4px; }
+
+  .service { gap: 18px; padding: 24px; }
+  .service__sticker { width: 64px; height: 64px; }
+  .service__title { font-size: 30px; }
+  .service__desc { font-size: 15px; }
+
+  .faq { display: flex; flex-direction: column; gap: 12px; padding: 32px 24px 16px; }
+  .faq__q { font-size: 17px; }
+  .faq__a { margin-bottom: 20px; font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__icon, .faq__icon-v { transition: none; }
+}

@@ -1,90 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hire Rachel Larralde for web development, automations, and QA systems." />
-  <meta name="author" content="Rachel Larralde" />
-  <meta name="theme-color" content="#121212" />
-  <link rel="icon" href="/favicon.png" />
-  <title>hire // rachell.dev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../css/rachell-tokens.css" />
-  <link rel="stylesheet" href="../css/rachell.css" />
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{var t=localStorage.getItem('rachell-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light')}catch(e){}})();</script>
+  <meta name="theme-color" content="#F5EFE6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/site.js" defer></script>
 
+  <link rel="stylesheet" href="/css/hire.css">
+  <title>Hire me — Rachel Larralde</title>
+  <meta name="description" content="Hire Rachel Larralde to build websites, n8n and AI automations, and QA systems. Project-based pricing, async work with regular updates.">
+  <meta name="author" content="Rachel Larralde">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hire me — Rachel Larralde">
+  <meta property="og:description" content="Websites, automations and QA systems for creators, small businesses and teams.">
+  <meta name="twitter:card" content="summary">
+</head>
 <body>
-  <header class="bar bar--top" id="topbar">
-    <div class="bar__cell bar__left">
-      <button class="bar__launch" id="launcher-btn" aria-label="open launcher" title="launcher ⌘k">◆</button>
-      <nav class="ws" aria-label="workspaces">
-        <a href="/#hero" class="ws__tab"><span class="ws__n">1</span><span class="lbl">home</span></a>
-        <a href="/#work" class="ws__tab"><span class="ws__n">2</span><span class="lbl">work</span></a>
-        <a href="/#about" class="ws__tab"><span class="ws__n">3</span><span class="lbl">about</span></a>
-        <a href="/#contact" class="ws__tab"><span class="ws__n">4</span><span class="lbl">contact</span></a>
-        <a href="/hire-me/" class="ws__tab ws__tab--hire is-active"><span class="ws__n">▸</span><span class="lbl">hire me</span></a>
+<div class="page">
+
+  <header class="site-header">
+    <div class="nav-pill">
+      <a class="wordmark" href="/" aria-label="Rachel Larralde, home">
+        <span class="wordmark__text" aria-hidden="true">rachell</span>
+        <svg class="wordmark__squiggle" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C18 1 30 9 46 5 S78 2 98 6"/></svg>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li class="nav-links__item--desk"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-links__item--desk"><a class="nav-link" href="/work/">Work</a></li>
+          <li><a class="nav-hire" href="/hire-me/" aria-current="page">Hire me</a></li>
+        </ul>
       </nav>
+      <button type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+        <svg class="theme-toggle__moon" viewBox="0 0 256 256" aria-hidden="true"><path d="M210.69,158.18A88,88,0,1,1,97.82,45.31,96.08,96.08,0,0,0,192,160,96.78,96.78,0,0,0,210.69,158.18Z" opacity="0.2"/><path d="M240,96a8,8,0,0,1-8,8H216v16a8,8,0,0,1-16,0V104H184a8,8,0,0,1,0-16h16V72a8,8,0,0,1,16,0V88h16A8,8,0,0,1,240,96ZM144,56h8v8a8,8,0,0,0,16,0V56h8a8,8,0,0,0,0-16h-8V32a8,8,0,0,0-16,0v8h-8a8,8,0,0,0,0,16Zm72.77,97a8,8,0,0,1,1.43,8A96,96,0,1,1,95.07,37.8a8,8,0,0,1,10.6,9.06A88.07,88.07,0,0,0,209.14,150.33,8,8,0,0,1,216.77,153Zm-19.39,14.88c-1.79.09-3.59.14-5.38.14A104.11,104.11,0,0,1,88,64c0-1.79,0-3.59.14-5.38A80,80,0,1,0,197.38,167.86Z"/></svg>
+        <svg class="theme-toggle__sun" viewBox="0 0 256 256" aria-hidden="true"><path d="M184,128a56,56,0,1,1-56-56A56,56,0,0,1,184,128Z" opacity="0.2"/><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+      </button>
+      <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+        <svg class="ic menu-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9 H20 M4 15 H20"/></svg>
+        <svg class="ic menu-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
+      </button>
     </div>
-    <div class="bar__cell bar__center"><span id="clock">--:--:--</span>&nbsp;·&nbsp;<span id="date"></span></div>
-    <div class="bar__cell bar__right">
-      <span id="bar-cpu" class="meter meter--sm" aria-hidden="true"></span>
-      <span id="bar-mem" class="meter meter--sm" aria-hidden="true"></span>
-      <span class="badge badge--ok badge--dot">online</span>
-      <button class="bar__icon" id="power-btn" aria-label="lock session" title="lock (l)">⏻</button>
-    </div>
+    <nav class="nav-menu" id="site-menu" aria-label="Menu" hidden>
+      <a class="nav-menu__link" href="/">Home<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></a>
+      <a class="nav-menu__link" href="/work/">Work<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></a>
+      <a class="nav-menu__link" href="/hire-me/" aria-current="page">Hire me<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg></a>
+    </nav>
   </header>
 
-  <main class="desktop desktop--single">
-    <section class="panel panel--accent hire" aria-label="hire rachel">
-      <header class="panel__head"><span class="panel__title">hire.txt</span><span class="panel__meta">rachell.dev</span></header>
-      <div class="panel__body hire__body">
-        <h1 class="brief__h">i build <span class="hl">websites</span>, <span class="hl">automations</span>, and <span class="hl">qa systems</span>.</h1>
-        <p class="brief__p">for creators, small businesses, and teams who want less busywork and software that holds up.</p>
-        <div class="hero__facts">
-          <span class="badge badge--ok badge--dot">available for work</span>
-          <span class="badge">project-based pricing</span>
-          <span class="badge">async · regular updates</span>
-        </div>
+  <main class="site-main site-main--hire" id="main">
 
-        <div class="divider">faq</div>
-        <div class="faq" id="faq">
-          <div class="faq__item is-open"><button class="faq__q" aria-expanded="true"><span class="g">▾</span>how long does a project take?</button><p class="faq__a">simple sites: 1–2 weeks. bigger automations or qa setups: 3–4 weeks.</p></div>
-          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>what does it cost?</button><p class="faq__a">project-based, usually $2k–$10k depending on scope. always open to talking it through.</p></div>
-          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>what do you build with?</button><p class="faq__a">whatever fits — modern web frameworks, python/node backends, and automation tools like n8n.</p></div>
-          <div class="faq__item"><button class="faq__q" aria-expanded="false"><span class="g">▸</span>how do we work together?</button><p class="faq__a">async, with regular updates. a short call up front if it helps.</p></div>
+    <div class="hire-intro">
+      <section class="card hire-hero" aria-labelledby="hire-title">
+        <span class="hand hand--coral hire-hero__eyebrow">let’s work together</span>
+        <h1 class="serif hire-hero__title" id="hire-title">I build websites, automations and QA systems.</h1>
+        <p class="lede hire-hero__lede">For creators, small businesses and teams who want less busywork and software that holds up.</p>
+        <ul class="chip-row hire-hero__chips">
+          <li class="chip"><span class="dot" aria-hidden="true"></span>Available for work</li>
+          <li class="chip">Project-based pricing</li>
+          <li class="chip">Async, with regular updates</li>
+        </ul>
+        <div class="hire-hero__badge wiggle" aria-hidden="true">
+          <img class="hire-hero__bug sticker" src="/assets/site/stickers/bug.svg" alt="" width="104" height="104">
+          <span class="hand hire-hero__badge-label">bug squasher</span>
         </div>
+      </section>
 
-        <div class="divider">contact</div>
-        <div class="term__line"><span class="p-user">rachel</span><span class="p-at">@</span><span class="p-host">rachell.dev</span><span class="p-cwd">~</span><span class="p-sym">❯</span><span class="p-cmd" id="reveal-cmd"></span><span class="cursor" id="reveal-cursor" aria-hidden="true"></span></div>
-        <p class="uplink__mail" id="reveal-mail" aria-live="polite"></p>
-        <div class="hero__cta">
-          <button class="btn btn--lg" type="button" id="reveal-btn">show email</button>
-          <button class="btn btn--lg btn--secondary" type="button" id="reveal-copy" data-copy="rachellarralde@gmail.com" hidden>copy email</button>
-          <a href="/#work" class="btn btn--lg btn--ghost">see my work</a>
+      <section class="card say-hi" aria-labelledby="say-hi-title">
+        <div class="say-hi__text">
+          <span class="hand card-label">say hi</span>
+          <h2 class="serif say-hi__title" id="say-hi-title">DMs or email, whatever’s easiest.</h2>
         </div>
+        <div class="say-hi__actions">
+          <!-- TODO: X handle -->
+          <a class="btn btn--block lift" href="https://x.com/YOUR_HANDLE" target="_blank" rel="noopener">
+            <span class="say-hi__label"><svg class="ic-fill say-hi__x" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>DM me on X<span class="visually-hidden"> (opens in a new tab)</span></span>
+            <svg class="ic say-hi__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg>
+          </a>
+          <a class="btn btn--outline btn--block lift" href="mailto:rachelnocode@agentmail.to">
+            <span class="say-hi__label"><svg class="ic-fill say-hi__mail" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"/></svg>Email me</span>
+            <svg class="ic say-hi__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7 M8 7 H17 V16"/></svg>
+          </a>
+          <a class="say-hi__more" href="/work/">or see my work first →</a>
+        </div>
+      </section>
+    </div>
+
+    <section class="services" aria-label="What I build">
+      <article class="card service">
+        <img class="service__sticker sticker wiggle" style="--r:-5deg" src="/assets/site/stickers/browser.svg" alt="" width="72" height="72">
+        <div class="service__text">
+          <h2 class="serif service__title">Websites</h2>
+          <p class="service__desc">Fast, responsive sites for creators and small businesses.</p>
+        </div>
+      </article>
+      <article class="card service">
+        <img class="service__sticker sticker wiggle" style="--r:6deg" src="/assets/site/stickers/bolt.svg" alt="" width="72" height="72">
+        <div class="service__text">
+          <h2 class="serif service__title">Automations</h2>
+          <p class="service__desc">n8n and AI workflows that take busywork off your plate.</p>
+        </div>
+      </article>
+      <article class="card service">
+        <img class="service__sticker sticker wiggle" style="--r:-4deg" src="/assets/site/stickers/shield.svg" alt="" width="72" height="72">
+        <div class="service__text">
+          <h2 class="serif service__title">QA systems</h2>
+          <p class="service__desc">Test suites and pipelines, so releases stop being scary.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="card faq" aria-labelledby="faq-title">
+      <div class="faq__head">
+        <span class="hand card-label">good questions</span>
+        <h2 class="serif section-title" id="faq-title">Before we start</h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item" name="faq" open>
+          <summary class="faq__q">How long does a project take?<span class="faq__icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12 H19"/><path class="faq__icon-v" d="M12 5 V19"/></svg></span></summary>
+          <p class="faq__a">Simple sites take 1–2 weeks. Bigger automations or QA setups take 3–4 weeks.</p>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary class="faq__q">What does it cost?<span class="faq__icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12 H19"/><path class="faq__icon-v" d="M12 5 V19"/></svg></span></summary>
+          <p class="faq__a">Pricing is per project, usually $2k–$10k depending on scope. Always happy to talk it through.</p>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary class="faq__q">What do you build with?<span class="faq__icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12 H19"/><path class="faq__icon-v" d="M12 5 V19"/></svg></span></summary>
+          <p class="faq__a">Whatever fits: modern web frameworks, Python or Node backends, and automation tools like n8n.</p>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary class="faq__q">How do we work together?<span class="faq__icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12 H19"/><path class="faq__icon-v" d="M12 5 V19"/></svg></span></summary>
+          <p class="faq__a">Async, with regular updates. A short call up front if it helps.</p>
+        </details>
       </div>
     </section>
+
   </main>
 
-  <footer class="bar bar--bottom">
-    <button class="kc kc--btn" type="button" data-action="launcher"><kbd>⌘k</kbd><span>launcher</span></button>
-    <a class="kc" href="/#hero"><kbd>1</kbd><span>home</span></a>
-    <a class="kc" href="#contact"><kbd>⏎</kbd><span>contact</span></a>
-    <button class="kc kc--btn" type="button" data-action="lock"><kbd>l</kbd><span>lock</span></button>
-    <span style="margin-left:auto;display:flex;gap:12px;align-items:center">
-      <span class="badge badge--info" id="ws-badge">hire</span>
-      <span class="bar__copy"><span class="full">© <span id="year">2025</span> rachel larralde · </span><span class="hl">system online</span></span>
-    </span>
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> Rachel Larralde</span>
+    <a class="site-footer__email" href="mailto:rachelnocode@agentmail.to">rachelnocode@agentmail.to</a>
   </footer>
 
-  <div id="toasts" class="toasts" aria-live="polite"></div>
-
-  <script src="../js/rachell-os.js" type="module"></script>
-  <script src="../js/hire-reveal.js" type="module"></script>
-  <script src="../js/theme-switcher.js" type="module"></script>
-  <script src="../js/ascii-bg.js" type="module"></script>
+</div>
 </body>
-
 </html>

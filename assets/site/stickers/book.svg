@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><style>.o{fill:#fff;stroke:#fff;stroke-width:12px;stroke-linejoin:round;stroke-linecap:round}
+.ow{fill:none;stroke:#fff;stroke-width:22px;stroke-linecap:round}
+.lnw{fill:none;stroke:#fff;stroke-width:15px;stroke-linecap:round}
+.ln{fill:none;stroke:#211C17;stroke-width:5px;stroke-linecap:round;stroke-linejoin:round}
+.band{fill:none;stroke:#211C17;stroke-width:9px;stroke-linecap:round}
+.f-coral{fill:#E0643F}.f-butter{fill:#F4C95D}.f-teal{fill:#2E7A6E}.f-ink{fill:#211C17}.f-cream{fill:#FFF6E8}.f-sky{fill:#A9CFE8}
+.rj{stroke:#211C17;stroke-width:6px;stroke-linejoin:round}
+.bolt{fill:#F4C95D;stroke:#211C17;stroke-width:4px;stroke-linejoin:round}
+.ck{fill:none;stroke:#FFF6E8;stroke-width:9px;stroke-linecap:round;stroke-linejoin:round}
+.f-orange{fill:#F0923A}.f-pink{fill:#F6B3A6}.f-nose{fill:#E07A7A}
+.ear{fill:#F0923A;stroke:#F0923A;stroke-width:6px;stroke-linejoin:round}
+.stripe{fill:none;stroke:#B8561A;stroke-width:4.5px;stroke-linecap:round}
+.thin{fill:none;stroke:#211C17;stroke-width:2.5px;stroke-linecap:round;stroke-linejoin:round}
+.wh{fill:none;stroke:#fff;stroke-width:9px;stroke-linecap:round}
+.pl{fill:none;stroke:#C9B9A3;stroke-width:3px;stroke-linecap:round}</style>
+<path class="o" d="M60 40 C46 32 26 32 10 36 V98 C26 94 46 94 60 102 C74 94 94 94 110 98 V36 C94 32 74 32 60 40 Z"></path>
+<path class="f-coral" d="M60 40 C46 32 26 32 10 36 V98 C26 94 46 94 60 102 C74 94 94 94 110 98 V36 C94 32 74 32 60 40 Z"></path>
+<path class="f-cream" d="M60 34 C46 26 28 26 16 29 V91 C28 88 46 88 60 95 Z M60 34 C74 26 92 26 104 29 V91 C92 88 74 88 60 95 Z"></path>
+<path class="pl" d="M25 44 C34 42 42 42 50 45 M25 55 C34 53 42 53 50 56 M25 66 C34 64 42 64 50 67 M70 45 C78 42 86 42 95 44 M70 56 C78 53 86 53 95 55 M70 67 C78 64 86 64 95 66"></path>
+<path class="thin" d="M60 34 V95"></path></svg>
