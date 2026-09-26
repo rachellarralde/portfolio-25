@@ -1,0 +1,40 @@
+/* Book a call page — extras on top of /css/site.css */
+
+.book { margin-top: 64px; display: flex; flex-direction: column; gap: 28px; }
+
+.book-head { position: relative; }
+.book-head__text { display: flex; flex-direction: column; gap: 14px; max-width: 720px; }
+.book-head__eyebrow { font-size: 32px; }
+.book-head__lede { margin-top: 6px; max-width: 560px; }
+.book-head__chips { margin-top: 10px; }
+.book-head__sticker {
+  position: absolute;
+  right: 60px;
+  top: 30px;
+  width: 120px;
+  height: 120px;
+}
+
+.book-cal { padding: 24px; overflow: hidden; }
+.book-cal__embed { width: 100%; min-height: 640px; overflow: auto; border-radius: 18px; }
+.book-cal__fallback {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.book-cal__fallback a,
+.book-alt a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
+
+.book-alt { margin: 0; text-align: center; font-size: 16px; color: var(--body); }
+
+@media (max-width: 1099px) {
+  .book-head__sticker { right: 0; top: 0; width: 96px; height: 96px; }
+}
+
+@media (max-width: 699px) {
+  .book { margin-top: 40px; }
+  .book-head__sticker { display: none; }
+  .book-cal { padding: 12px; }
+  .book-cal__embed { min-height: 560px; }
+}

@@ -50,6 +50,7 @@
 .say-hi__label { display: inline-flex; align-items: center; gap: 12px; }
 .say-hi__x { width: 18px; height: 18px; }
 .say-hi__mail { width: 20px; height: 20px; }
+.say-hi__cal { width: 20px; height: 20px; }
 .say-hi__arrow { width: 20px; height: 20px; }
 .say-hi__more {
   display: inline-flex;

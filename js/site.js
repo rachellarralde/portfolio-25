@@ -24,6 +24,7 @@
       try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) { /* storage blocked */ }
     }
     syncThemeUI(theme);
+    document.dispatchEvent(new CustomEvent('rachell:themechange', { detail: { theme } }));
   }
 
   document.querySelectorAll('.theme-toggle').forEach((btn) => {
